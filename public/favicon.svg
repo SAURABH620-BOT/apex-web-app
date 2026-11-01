@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="14" fill="#0F172A"/>
+  <path d="M32 8L52 48H42L32 26L22 48H12L32 8Z" fill="url(#apexGrad)"/>
+  <circle cx="32" cy="40" r="4.5" fill="#FACC15"/>
+  <path d="M22 52H42" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="apexGrad" x1="12" y1="8" x2="52" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B82F6"/>
+      <stop offset="0.6" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#FACC15"/>
+    </linearGradient>
+  </defs>
+</svg>
