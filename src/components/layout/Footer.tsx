@@ -73,8 +73,8 @@ export const Footer: React.FC<FooterProps> = () => {
               {[
                 { code: 'ADCA', slug: 'adca', label: 'ADCA (12 Months)' },
                 { code: 'DCA', slug: 'dca', label: 'DCA (6 Months)' },
-                { code: 'DFA', slug: 'dfa', label: 'DFA Financial (6 Months)' },
-                { code: 'DTA', slug: 'dta', label: 'DTA Taxation (6 Months)' },
+                { code: 'DFA', slug: 'dfa', label: 'DFA Financial (4 Months)' },
+                { code: 'DTP', slug: 'dtp', label: 'DTP Publishing (3 Months)' },
                 { code: 'Office Work', slug: 'office-work', label: 'Office Work (3 Months)', isNew: true }
               ].map((c) => (
                 <li key={c.code}>

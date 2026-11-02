@@ -72,8 +72,8 @@ export const Contact: React.FC = () => {
   const courseOptions = [
     { value: 'ADCA', label: 'ADCA - Advance Diploma in Computer Applications (12M)' },
     { value: 'DCA', label: 'DCA - Diploma in Computer Applications (6M)' },
-    { value: 'DFA', label: 'DFA - Diploma in Financial Accounting (6M)' },
-    { value: 'DTA', label: 'DTA - Diploma in Taxation & Accounting (6M)' },
+    { value: 'DFA', label: 'DFA - Diploma in Financial Accounting (4M)' },
+    { value: 'DTP', label: 'DTP - Diploma in Desktop Publishing (3M)' },
     { value: 'Office Work', label: 'Office Work & Automation - MS Word, Excel & Tally (3M)' },
     { value: 'General Inquiry', label: 'General Inquiry / Custom Batch' }
   ];

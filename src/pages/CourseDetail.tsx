@@ -260,39 +260,56 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({ courseCode: propCour
           )}
 
           {/* FAQs Accordion */}
-          {course.faqs && (
+          {course.faqs && course.faqs.length > 0 && (
             <div className="space-y-4">
               <div className="space-y-1">
-                <h3 className="text-xl font-bold font-display text-white flex items-center gap-2">
+                <Badge variant="blue" size="sm">
+                  Course Clarifications
+                </Badge>
+                <h3 className="text-xl sm:text-2xl font-bold font-display text-white flex items-center gap-2">
                   <HelpCircle className="w-5 h-5 text-cyan-400" />
                   Frequently Asked Questions
                 </h3>
               </div>
 
               <div className="space-y-3">
-                {course.faqs.map((faq, fIdx) => (
-                  <div
-                    key={fIdx}
-                    className="rounded-2xl bg-slate-900/80 border border-slate-800 overflow-hidden"
-                  >
-                    <button
-                      onClick={() => toggleFaq(fIdx)}
-                      className="w-full text-left p-4.5 font-semibold text-sm sm:text-base text-white flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-800/60 transition-colors"
+                {course.faqs.map((faq, fIdx) => {
+                  const isOpen = openFaqIndex === fIdx;
+                  return (
+                    <div
+                      key={fIdx}
+                      className={`rounded-2xl transition-all duration-200 border overflow-hidden ${
+                        isOpen
+                          ? 'bg-slate-900 border-slate-700 shadow-md ring-1 ring-apex-yellow-400/20'
+                          : 'bg-slate-900/80 hover:bg-slate-900 border-slate-800 hover:border-slate-700'
+                      }`}
                     >
-                      <span>{faq.question}</span>
-                      <ChevronDown
-                        className={`w-4 h-4 text-apex-yellow-400 transition-transform ${
-                          openFaqIndex === fIdx ? 'rotate-180' : ''
-                        }`}
-                      />
-                    </button>
-                    {openFaqIndex === fIdx && (
-                      <div className="p-4.5 pt-0 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60">
-                        {faq.answer}
-                      </div>
-                    )}
-                  </div>
-                ))}
+                      <button
+                        type="button"
+                        onClick={() => toggleFaq(fIdx)}
+                        className="w-full text-left px-5 py-4 sm:px-6 sm:py-4.5 font-semibold text-sm sm:text-base text-white flex items-center justify-between gap-4 cursor-pointer transition-colors"
+                      >
+                        <span className={`${isOpen ? 'text-apex-yellow-400 font-bold' : 'text-slate-100'} transition-colors leading-snug`}>
+                          {faq.question}
+                        </span>
+                        <div
+                          className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
+                            isOpen
+                              ? 'bg-apex-yellow-400/20 text-apex-yellow-400 rotate-180'
+                              : 'bg-slate-800 text-slate-400'
+                          }`}
+                        >
+                          <ChevronDown className="w-4 h-4" />
+                        </div>
+                      </button>
+                      {isOpen && (
+                        <div className="px-5 pb-5 pt-3 sm:px-6 sm:pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/80 bg-slate-950/40 animate-fadeIn">
+                          {faq.answer}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             </div>
           )}

@@ -47,11 +47,11 @@ export const testimonialsData: Testimonial[] = [
   {
     id: 'test-4',
     name: 'Vikash Kumar',
-    courseTaken: 'DTA (Diploma in Taxation & Accounting)',
+    courseTaken: 'DTP (Diploma in Desktop Publishing)',
     year: '2024 Batch',
-    currentRole: 'Junior Tax Consultant',
-    companyOrDept: 'Bansal & Associates (CA Firm)',
-    quote: 'Ashutosh Sir covered MCA-level taxation frameworks and income tax portal navigation that most other computer institutes never touch. The certificate portal also made verifying my credentials for my employer seamless.',
+    currentRole: 'Senior Graphic Designer',
+    companyOrDept: 'Creative Print & Media House',
+    quote: 'The DTP course at Apex covered Adobe PageMaker, Photoshop, CorelDraw, and Canva in complete depth. The practical lab training helped me land my graphic design job immediately after completion.',
     rating: 5,
     avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80'
   }

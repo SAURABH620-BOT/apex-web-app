@@ -62,12 +62,13 @@ export function getCourseFullName(code: string): { fullName: string; duration: s
     case 'DFA':
       return {
         fullName: 'Diploma in Financial Accounting (DFA)',
-        duration: '6 Months'
+        duration: '4 Months'
       };
+    case 'DTP':
     case 'DTA':
       return {
-        fullName: 'Diploma in Taxation & Accounting (DTA)',
-        duration: '6 Months'
+        fullName: 'Diploma in Desktop Publishing (DTP)',
+        duration: '3 Months'
       };
     case 'Office Work':
       return {

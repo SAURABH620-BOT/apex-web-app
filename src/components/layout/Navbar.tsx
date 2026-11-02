@@ -167,8 +167,8 @@ export const Navbar: React.FC<NavbarProps> = () => {
   const courseDropdownItems = [
     { slug: 'adca', code: 'ADCA', name: 'Advance Diploma in Computer Applications', duration: '12 Months', isPopular: true },
     { slug: 'dca', code: 'DCA', name: 'Diploma in Computer Applications', duration: '6 Months' },
-    { slug: 'dfa', code: 'DFA', name: 'Diploma in Financial Accounting', duration: '6 Months' },
-    { slug: 'dta', code: 'DTA', name: 'Diploma in Taxation & Accounting', duration: '6 Months' },
+    { slug: 'dfa', code: 'DFA', name: 'Diploma in Financial Accounting', duration: '4 Months' },
+    { slug: 'dtp', code: 'DTP', name: 'Diploma in Desktop Publishing', duration: '3 Months' },
     { slug: 'office-work', code: 'Office Work', name: 'Office Work (MS Word, Excel & Tally)', duration: '3 Months', isNew: true }
   ];
 

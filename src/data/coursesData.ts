@@ -11,58 +11,65 @@ export const coursesData: Course[] = [
     eligibility: '10th / 12th Pass or Equivalent from recognized board',
     badge: 'Most Popular',
     isPopular: true,
-    description: 'The flagship one-year diploma covers essential computer concepts, complete office productivity tools, database fundamentals, web development basics, graphic design fundamentals, and computerized accounting with Tally Prime.',
+    description: 'The flagship one-year diploma covers Basic Computer, Typing (Hindi + English), Operating System, Notepad, Wordpad, MS Paint, Ms-Office (Word, Excel, Power point), MS-Access, HTML, Photoshop, CoralDraw, PageMaker, Tally (Prime), Internet, and Basic Hardware.',
     skillsGained: [
-      'Operating Systems & Computer Fundamentals',
-      'MS Office Suite (Word, Excel, PowerPoint, Access)',
-      'Tally Prime with GST & Inventory Management',
-      'HTML, CSS & Web Page Design Basics',
-      'Desktop Publishing (Photoshop & CorelDraw Intro)',
-      'Internet, Cyber Security & Digital Banking'
+      'Basic Computer & Typing (Hindi + English)',
+      'Operating System & Basic Hardware',
+      'Notepad, Wordpad & MS Paint',
+      'Ms-Office (Word, Excel, Power point) & MS-Access',
+      'DTP (Photoshop, CoralDraw, PageMaker)',
+      'Tally (Prime), HTML & Internet'
     ],
     toolsCovered: [
-      'Microsoft Word 365',
-      'Microsoft Excel (Advanced VBA/Formulas)',
-      'Microsoft PowerPoint',
-      'Microsoft Access',
-      'Tally Prime 4.0 with GST',
-      'HTML5 & CSS3',
-      'Adobe Photoshop Essentials',
-      'English & Hindi Typing Master'
+      'Basic Computer & Typing (Hindi + English)',
+      'Operating System (Windows)',
+      'Notepad, Wordpad & MS Paint',
+      'Ms-Office (Word, Excel, Power point)',
+      'MS-Access',
+      'HTML',
+      'Photoshop',
+      'CoralDraw',
+      'PageMaker',
+      'Tally (Prime)',
+      'Internet',
+      'Basic Hardware'
     ],
     practicalProjects: [
-      'Automated Corporate Payroll & Salary Slip Generation in Excel',
-      'End-to-End Company Accounting Finalization in Tally Prime',
-      'Multi-page Responsive Business Web Template in HTML/CSS',
-      'Bulk Dispatch Mail Merge System for Corporate Letters',
-      'Inventory Stock Valuation and GST E-Way Bill Simulation'
+      'Complete Office Documentation & Mail Merge in Ms-Office',
+      'Company Accounting, GST Billing & Finalization in Tally (Prime)',
+      'Graphic Banners, ID Cards & Photo Editing in Photoshop & CoralDraw',
+      'Publication Layouts & Book Designing in PageMaker',
+      'Website Page Layout with HTML and Internet Services Integration'
     ],
     careerOpportunities: [
-      'Computer Operator / Executive Assistant',
-      'Data Entry Specialist / MIS Executive',
+      'Computer Operator / Office Assistant',
+      'Data Entry Specialist (Hindi + English)',
+      'DTP Designer (Photoshop, CoralDraw, PageMaker)',
       'Accounts Executive (Tally Prime)',
-      'Office Administrator & Back Office Coordinator',
+      'IT Support & Hardware Assistant',
       'Government Job Computer Qualification'
     ],
     modules: [
       {
-        title: 'Semester 1: Fundamentals & Office Automation',
+        title: 'Semester 1: Fundamentals, Office Automation & Web Design',
         topics: [
-          'Computer Basics, Hardware Components & Operating Systems (Windows 11)',
-          'MS Word: Advanced Document Formatting, Mail Merge, Tables & Reports',
-          'MS Excel: Formulas, Functions (VLOOKUP, XLOOKUP, IF, INDEX-MATCH), Pivot Tables & Charts',
-          'MS PowerPoint: Professional Slide Decks, Master Slides, Transitions & Media',
-          'MS Access: Database creation, queries, forms, and relationship models'
+          'Basic Computer, Typing(Hindi + English)',
+          'Operating System',
+          'Notepad, Wordpad, MS Paint',
+          'Ms-Office (Word, Excel, Power point)',
+          'MS-Access',
+          'HTML'
         ]
       },
       {
-        title: 'Semester 2: Professional Accounting & Digital Technologies',
+        title: 'Semester 2: Graphic Designing, Accounting & Hardware',
         topics: [
-          'Tally Prime: Company Creation, Ledger, Voucher Entries, GST & Invoicing',
-          'Payroll, Inventory Management & Bank Reconciliation in Tally',
-          'Desktop Publishing: Photo editing, banners, and document layouts',
-          'HTML5 & Web Designing foundations for modern business websites',
-          'Cyber Safety, Online Portals, E-Governance & Cloud Storage'
+          'Photoshop',
+          'CoralDraw',
+          'PageMaker',
+          'Tally (Prime)',
+          'Internet',
+          'Basic Hardware'
         ]
       }
     ],
@@ -79,11 +86,11 @@ export const coursesData: Course[] = [
       },
       {
         question: 'Will I get individual computer access in labs?',
-        answer: 'Yes, 100% guaranteed. At Apex, every student gets an individual Intel Core i5/i7 workstation during their batch hours without sharing.'
+        answer: 'Yes, 100% guaranteed. At Apex, every student gets an individual workstation during their batch hours without sharing.'
       },
       {
         question: 'Do I need prior coding or computer knowledge to join?',
-        answer: 'No prior background is required. We start right from the very basics of switching on computers and keyboard ergonomics under Durgesh Sir.'
+        answer: 'No prior background is required. We start right from Basic Computer and Typing under Durgesh Sir.'
       }
     ]
   },
@@ -97,62 +104,68 @@ export const coursesData: Course[] = [
     eligibility: '10th Pass or Equivalent',
     badge: 'Fast-Track Career',
     isPopular: true,
-    description: 'A focused six-month program designed to transform beginners into confident, computer-savvy professionals ready for administrative and clerical positions.',
+    description: 'A focused 6-month diploma covering Computer Fundamental, DOS, Operating System, Ms-Office (Word, Excel, Power point), MS-Access, HTML, Internet, and Basic Hardware.',
     skillsGained: [
-      'Computer Fundamentals & Windows Operating Environment',
-      'MS Word: Typing, Business Letters, Formatting & Printing',
-      'MS Excel: Worksheets, Formulas, Data Entry & Sorting',
-      'MS PowerPoint: Presentations & Slide Design',
-      'High-Speed Typing (English & Hindi)',
-      'Internet Browsing, Emailing, and E-Services'
+      'Computer Fundamental & Basic Hardware',
+      'DOS & Operating System',
+      'Ms-Office (Word, Excel, Power point)',
+      'MS-Access Database Management',
+      'HTML Web Page Designing Basics',
+      'Internet, Emailing & Online Services'
     ],
     toolsCovered: [
-      'Windows 11 Operating System',
-      'Microsoft Word',
-      'Microsoft Excel',
-      'Microsoft PowerPoint',
-      'Bilingual Typing Software (English & Hindi Kruti Dev)',
-      'Google Workspace & Cloud Storage'
+      'Computer Fundamental',
+      'DOS',
+      'Operating System (Windows)',
+      'Ms-Office (Word, Excel, Power point)',
+      'MS-Access',
+      'HTML',
+      'Internet',
+      'Basic Hardware'
     ],
     practicalProjects: [
-      'Official Administrative Letter Drafting & Formatting',
-      'Monthly Sales & Attendance Registers in Excel',
-      'Speed Touch-Typing Target: 35-40+ WPM with 95% Accuracy',
-      'Professional Multi-Slide Corporate Presentation'
+      'Official Administrative Letter Drafting & Formatting in Ms-Office',
+      'Monthly Sales, Salary & Attendance Registers in Excel',
+      'Database Design, Student Record Forms & Reports in MS-Access',
+      'Responsive Web Page Layout Design in HTML',
+      'DOS Command Line Operations & Basic Hardware Troubleshooting'
     ],
     careerOpportunities: [
       'Data Entry Operator (DEO)',
+      'Computer Operator / Office Assistant',
       'Front Desk / Reception Coordinator',
-      'Customer Support Executive',
-      'Office Assistant'
+      'Administrative Support Assistant',
+      'Government Job Computer Qualification'
     ],
     modules: [
       {
-        title: 'Module 1: Computer Concepts & Operating Environment',
+        title: 'Module 1: Fundamentals, Operating System & Hardware',
         topics: [
-          'History, Generation & Architecture of Computers',
-          'Storage devices, memory hierarchy, peripherals',
-          'Windows File Management, Control Panel & Settings'
+          'Computer Fundamental',
+          'DOS',
+          'Operating System',
+          'Basic Hardware'
         ]
       },
       {
-        title: 'Module 2: Productivity Suite & Internet Applications',
+        title: 'Module 2: Office Applications, Database & Web',
         topics: [
-          'MS Office Suite: Word, Excel, PowerPoint',
-          'Speed typing techniques with Hindi/English keyboard layouts',
-          'Email etiquette, cloud drives, and cyber awareness'
+          'Ms-Office (Word, Excel, Power point)',
+          'MS-Access',
+          'HTML',
+          'Internet'
         ]
       }
     ],
     highlights: [
       'Ideal for Students & Job Seekers',
-      'Dedicated Typing Practice Labs',
+      'Dedicated Hands-on Lab Sessions',
       'Government & Private Sector Job Ready'
     ],
     faqs: [
       {
         question: 'What is the duration of DCA at Apex?',
-        answer: 'DCA is a 6-month intensive diploma covering computer fundamentals, MS Office, and daily typing tests.'
+        answer: 'DCA is a 6-month intensive diploma covering Computer Fundamental, DOS, Operating System, Ms-Office, MS-Access, HTML, Internet, and Basic Hardware.'
       },
       {
         question: 'Can I switch to ADCA later if I want?',
@@ -164,62 +177,86 @@ export const coursesData: Course[] = [
     id: 'dfa',
     code: 'DFA',
     name: 'Diploma in Financial Accounting',
-    tagline: 'Master Practical Bookkeeping, GST & Corporate Financial Ledgers',
-    duration: '6 Months',
+    tagline: 'Master Practical Bookkeeping, GST & Corporate Financial Ledgers in 4 Months',
+    duration: '4 Months',
     level: 'Intermediate',
     eligibility: '10th / 12th Pass (Commerce or Any Stream)',
     badge: 'High Industry Demand',
-    description: 'Specialized diploma focusing exclusively on commercial accounting standards, computerized ledgers, GST calculations, and financial reporting with modern accounting software.',
+    description: 'Comprehensive 4-month financial diploma covering Introduction of Accounting, Tally Prime With GST, Advance Feature of Tally, Cost Category & Cost Center, Discount, Physical Stock, Actual and Bill Quantity, Bill-wise Details, Batch-wise Details, Zero Value Entry, Cheque Printing, Company Logo, Credit Limit, Inventory, Currency, Budget, and Payroll.',
     skillsGained: [
-      'Principles of Double-Entry Bookkeeping',
-      'Tally Prime: Setup, Day Book, Profit & Loss, Balance Sheets',
-      'Goods & Services Tax (CGST, SGST, IGST) Configuration',
-      'Bank Reconciliation Statements (BRS)',
-      'Inventory, Stock Valuation & Purchase Order Cycles',
-      'MS Excel for Financial Modeling & MIS Statements'
+      'Introduction of Accounting & Golden Rules',
+      'Tally Prime With GST & Invoicing',
+      'Advance Features of Tally & Cost Centers',
+      'Bill-wise & Batch-wise Details Management',
+      'Inventory, Physical Stock & Discount Structure',
+      'Cheque Printing, Company Logo, Budget & Payroll'
     ],
     toolsCovered: [
-      'Tally Prime 4.0 Release',
-      'GST Portal Invoicing Sandbox',
-      'Advanced MS Excel for Accounting',
-      'E-Way Bill Generation Simulator',
-      'Bank Reconciliation Engine'
+      'Introduction of Accounting',
+      'Tally Prime With GST',
+      'Advance Feature of Tally',
+      'Cost Category & Cost Center',
+      'Discount & Physical Stock',
+      'Actual and Bill Quantity',
+      'Bill-wise & Batch-wise Details',
+      'Zero Value Entry & Cheque Printing',
+      'Company Logo & Credit Limit',
+      'Inventory, Currency & Budget',
+      'Payroll Management'
     ],
     practicalProjects: [
-      'End-to-End Enterprise Trading Ledger Setup in Tally Prime',
-      'Multi-tier Tax Invoice Preparation with CGST, SGST & IGST',
-      'Monthly Bank Reconciliation for Real Commercial Accounts',
-      'Stock Valuation & Manufacturing Journal Entries'
+      'End-to-End Enterprise Trading Ledger Setup in Tally Prime With GST',
+      'Multi-tier Tax Invoice Preparation with Discount, Actual & Bill Quantity',
+      'Cost Category & Cost Center Allocation for Departmental Audits',
+      'Cheque Printing, Company Logo Configuration & Bank Reconciliation',
+      'Complete Employee Salary & Payroll Slip Processing'
     ],
     careerOpportunities: [
       'Junior Accountant / Tally Operator',
       'Accounts Payable / Receivable Clerk',
-      'Billing Executive in Retail / Wholesale Enterprises',
-      'Audit Assistant in CA / Tax Firms'
+      'Billing & Inventory Executive in Retail / Wholesale',
+      'Audit Assistant in CA / Tax Firms',
+      'Payroll & Commercial Accounting Assistant'
     ],
     modules: [
       {
-        title: 'Module 1: Manual Accounting to Computerized Transition',
+        title: 'Module 1: Accounting Foundations & Core Tally Prime GST',
         topics: [
-          'Rules of Debit & Credit, Journal Entries, Ledger Posting, Trial Balance',
-          'Financial Statements: Trading A/C, Profit & Loss, Balance Sheet'
+          'Introduction of Accounting',
+          'Tally Prime With GST',
+          'Advance Feature of Tally',
+          'Cost Category & Cost Center',
+          'Discount, Physical Stock',
+          'Actual and Bill Quantity',
+          'Bill-wise Details',
+          'Batch-wise Details'
         ]
       },
       {
-        title: 'Module 2: Enterprise Tally Prime & Taxation',
+        title: 'Module 2: Advanced Operations, Inventory, Banking & Payroll',
         topics: [
-          'Voucher Entry, Multi-Currency, Cost Centers',
-          'GST Invoicing, E-Way Bill Concepts & TDS basics',
-          'Financial MIS Reporting and Exporting to Excel'
+          'Zero Value Entry',
+          'Cheque Printing',
+          'Company Logo',
+          'Credit Limit',
+          'Inventory',
+          'Currency',
+          'Budget',
+          'Payroll, Etc.'
         ]
       }
     ],
     highlights: [
       'Real-world Invoice Simulation',
       'Tally Prime Latest Release Training',
-      'Practical Balance Sheet Finalization'
+      'Practical Balance Sheet Finalization',
+      'GST & Payroll Live Practice'
     ],
     faqs: [
+      {
+        question: 'What is the duration of DFA at Apex?',
+        answer: 'DFA is a 4-month intensive diploma covering complete corporate accounting, GST, and payroll in Tally Prime.'
+      },
       {
         question: 'Do I need a commerce background for DFA?',
         answer: 'Not at all! We teach accounting from the basic golden rules of debit and credit so science and arts students excel equally.'
@@ -231,73 +268,72 @@ export const coursesData: Course[] = [
     ]
   },
   {
-    id: 'dta',
-    code: 'DTA',
-    name: 'Diploma in Taxation & Accounting',
-    tagline: 'Advanced Direct & Indirect Tax Computing with Practical E-Filing',
-    duration: '6 Months',
-    level: 'Advanced',
-    eligibility: '12th Pass / Graduate (Preferred Commerce/Finance)',
-    badge: 'Specialist Course',
-    description: 'An advanced diploma curated for aspiring tax practitioners, covering Income Tax calculations, GST returns, TDS e-filing, and compliance workflows taught by MCA/Taxation experts.',
+    id: 'dtp',
+    code: 'DTP',
+    name: 'Diploma in Desktop Publishing',
+    tagline: 'Master Professional Graphic Design, Photo Editing & Layout Design in 3 Months',
+    duration: '3 Months',
+    level: 'Intermediate',
+    eligibility: '10th / 12th Pass or Equivalent',
+    badge: 'Creative Career',
+    description: 'A career-defining 3-month graphic & publishing diploma covering Adobe Pagemaker, Adobe Photoshop, CoralDraw, and Canva for professional printing, advertising, social media creatives, and digital design.',
     skillsGained: [
-      'Direct Tax (Income Tax computation under various heads)',
-      'Indirect Tax (Comprehensive GST Law & Procedures)',
-      'Income Tax Portal (ITR-1, ITR-4 filing workflows)',
-      'GST Portal: GSTR-1, GSTR-3B return mechanics',
-      'TDS / TCS rules, challans & deduction certificates',
-      'Advanced Excel for Tax Computations & Audit Support'
+      'Adobe Pagemaker Layout & Book Designing',
+      'Adobe Photoshop Image Editing & Retouching',
+      'CoralDraw Vector Graphics & Logo Design',
+      'Canva Social Media Marketing Creatives',
+      'Visiting Cards, Banners & Pamphlet Designing',
+      'Color Models (RGB/CMYK) & Commercial Printing'
     ],
     toolsCovered: [
-      'Income Tax E-Filing Simulator',
-      'GST Common Portal Sandbox (GSTR-1, 3B)',
-      'TDS Utility (TRACES / TIN-NSDL)',
-      'Tally Prime Taxation Suite',
-      'Financial Modeling in Excel'
+      'Adobe Pagemaker',
+      'Adobe Photoshop',
+      'CoralDraw',
+      'Canva'
     ],
     practicalProjects: [
-      'Live Case Study: Salary & Business Income Tax Computation',
-      'Complete Monthly GSTR-1 and GSTR-3B Return Filing Mockup',
-      'Form 16 / 16A Verification & TDS Return Prep (24Q/26Q)',
-      'Audit Trail Verification & Tax Reconciliation Statements'
+      'Visiting Card, Flex Banner, Bill Book & Pamphlet Designing in CoralDraw',
+      'Studio Passport Photo Retouching & Creative Poster in Photoshop',
+      'Book Layout, Newspaper & Magazine Design in Adobe Pagemaker',
+      'Branded Social Media Marketing Posts & Banners in Canva'
     ],
     careerOpportunities: [
-      'Tax Consultant / Tax Return Preparer (TRP)',
-      'Corporate Tax Executive',
-      'Senior Accountant in CA Consultancies',
-      'Independent GST Practitioner'
+      'DTP Operator & Printing Press Executive',
+      'Graphic Designer & Creative Executive',
+      'Photo Studio Specialist',
+      'Freelance Digital Designer',
+      'Advertising & Media Agency Designer'
     ],
     modules: [
       {
-        title: 'Module 1: Income Tax Laws & Returns',
+        title: 'Module 1: Publishing Layouts & Vector Graphics',
         topics: [
-          'Income heads: Salary, House Property, Business/Profession, Capital Gains',
-          'Deductions under Chapter VI-A (80C, 80D, etc.) & Tax Rebates',
-          'Simulated ITR-1 and ITR-4 Filing Walkthroughs'
+          'Adobe Pagemaker',
+          'CoralDraw'
         ]
       },
       {
-        title: 'Module 2: Goods & Services Tax (GST) Practicum',
+        title: 'Module 2: Photo Editing & Cloud Graphic Design',
         topics: [
-          'GST Registration, Tax Invoice Rules, Input Tax Credit (ITC)',
-          'GSTR-1, GSTR-3B, GSTR-9 Filing workflows and reconciliation',
-          'Audit documentation and assessment guidelines'
+          'Adobe Photoshop',
+          'Canva'
         ]
       }
     ],
     highlights: [
-      'Led by Ashutosh Kumar (MCA & DTA Specialist)',
-      'Live Case Studies & Government Portal Simulators',
-      'Official Affiliation & Verification Standard'
+      '100% Practical Designing Lab Practice',
+      'Master Core Design Software: PageMaker, Photoshop, CorelDraw & Canva',
+      'Portfolio Preparation for High-Paying Printing & Digital Design Jobs',
+      'Industry Standard ISO 9001:2015 Certification'
     ],
     faqs: [
       {
-        question: 'Who should enroll in DTA?',
-        answer: 'DTA is ideal for B.Com/M.Com graduates, aspiring tax consultants, CA firm assistants, and accountants aiming for higher-paying taxation roles.'
+        question: 'What is the duration of DTP at Apex?',
+        answer: 'DTP is a 3-month fast-track professional diploma covering Adobe Pagemaker, Adobe Photoshop, CoralDraw, and Canva.'
       },
       {
-        question: 'Will I learn practical tax return filing?',
-        answer: 'Yes, 100% hands-on simulation of ITR and GST portals is conducted in our specialized accounting lab.'
+        question: 'Do I need prior drawing or creative background to join DTP?',
+        answer: 'No prior drawing background is needed. We start from the basics of tools, fonts, colors, and layout techniques under expert guidance.'
       }
     ]
   },

@@ -42,13 +42,13 @@ export const facultyData: Faculty[] = [
     qualification: 'Master of Computer Applications (MCA)',
     experienceYears: 4,
     experienceText: '4+ Years Experience',
-    specialization: 'DTA Expert (Diploma in Taxation & Accounting)',
-    bio: 'Post-graduate MCA faculty member specializing in advanced taxation algorithms, direct & indirect tax computing, e-filing portals, and structured enterprise computing.',
+    specialization: 'DTP & Advanced IT Specialist',
+    bio: 'Post-graduate MCA faculty member specializing in Desktop Publishing, graphic design applications (Photoshop, CoralDraw, PageMaker, Canva), and structured enterprise computing.',
     avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&crop=faces&facepad=3.8&w=600&h=600&q=80',
-    keySkills: ['DTA Curriculum Lead', 'Income Tax E-Filing', 'GST Portal Operations', 'Advanced Excel VBA', 'Data Analysis'],
+    keySkills: ['DTP Curriculum Lead', 'Adobe Photoshop', 'CoralDraw', 'Adobe PageMaker', 'Canva Creatives'],
     achievements: [
-      'Developed Apex customized DTA practical taxation modules',
-      'Conducts real-life simulated tax return filing workshops',
+      'Developed Apex customized DTP practical design modules',
+      'Conducts real-life commercial printing and publication workshops',
       'MCA honors graduate & IT curriculum architect'
     ]
   }

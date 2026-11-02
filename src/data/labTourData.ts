@@ -22,7 +22,7 @@ export const labTourData: LabZone[] = [
   },
   {
     id: 'lab-zone-2',
-    title: 'Financial Accounting & Taxation Hub (DFA / DTA)',
+    title: 'Financial Accounting & Enterprise Lab (DFA / DTP)',
     tagline: 'Specialized Enterprise Accounting & GST Portal Simulation Center',
     category: 'Accounting & Taxation',
     specs: ['Licensed Tally Prime Release 4.0+', 'Live GST Portal Sandbox', 'High-Speed Thermal & Laser Printers', 'Dual-Window Workstations'],

@@ -809,8 +809,8 @@ export const CertificatePortal: React.FC = () => {
                   options={[
                     { value: 'ADCA', label: 'ADCA - Advance Diploma in Computer Applications (12M)' },
                     { value: 'DCA', label: 'DCA - Diploma in Computer Applications (6M)' },
-                    { value: 'DFA', label: 'DFA - Diploma in Financial Accounting (6M)' },
-                    { value: 'DTA', label: 'DTA - Diploma in Taxation & Accounting (6M)' },
+                    { value: 'DFA', label: 'DFA - Diploma in Financial Accounting (4M)' },
+                    { value: 'DTP', label: 'DTP - Diploma in Desktop Publishing (3M)' },
                     { value: 'Office Work', label: 'Office Work - MS Word, Excel & Tally Prime (3M)' }
                   ]}
                   value={values.course}

@@ -1,4 +1,4 @@
-export type CourseOption = 'ADCA' | 'DCA' | 'DFA' | 'DTA' | 'Office Work';
+export type CourseOption = 'ADCA' | 'DCA' | 'DFA' | 'DTP' | 'Office Work';
 export type SocialCategory = 'General' | 'OBC' | 'SC' | 'ST' | 'EWS';
 export type Gender = 'Male' | 'Female' | 'Other';
 

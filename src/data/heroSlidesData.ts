@@ -20,7 +20,7 @@ export const heroSlidesData: HeroSlide[] = [
     badgeColor: 'yellow',
     title: 'Master Modern Tech at',
     highlightedText: 'Apex Institute',
-    description: 'Empowering 1,500+ ambitious students with recognized IT diplomas (ADCA, DCA, DFA, DTA) and job-ready practical training.',
+    description: 'Empowering 1,500+ ambitious students with recognized IT diplomas (ADCA, DCA, DFA, DTP) and job-ready practical training.',
     bgImage: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1920&q=80',
     primaryCtaText: 'Explore Courses',
     primaryCtaAction: 'courses',

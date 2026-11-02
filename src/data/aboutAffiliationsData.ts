@@ -69,7 +69,7 @@ export const affiliationsList: AffiliationRecord[] = [
     category: 'Govt. Affiliation',
     issuedBy: 'National Skill & Computer Education Council / ICA',
     issueYear: '2018',
-    description: 'Affiliated training partner under the recognized Computer Education network for delivering national standard diplomas (ADCA, DCA, DFA, DTA).',
+    description: 'Affiliated training partner under the recognized Computer Education network for delivering national standard diplomas (ADCA, DCA, DFA, DTP).',
     validity: 'Authorized Center',
     statusBadge: 'ICA Authorized'
   },
