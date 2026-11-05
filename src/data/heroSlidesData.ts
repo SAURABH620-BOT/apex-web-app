@@ -6,6 +6,7 @@ export interface HeroSlide {
   highlightedText: string;
   description: string;
   bgImage: string;
+  imagePosition?: string;
   primaryCtaText: string;
   primaryCtaAction: string;
   secondaryCtaText: string;
@@ -21,7 +22,8 @@ export const heroSlidesData: HeroSlide[] = [
     title: 'Master Modern Tech at',
     highlightedText: 'Apex Institute',
     description: 'Empowering 1,500+ ambitious students with recognized IT diplomas (ADCA, DCA, DFA, DTP) and job-ready practical training.',
-    bgImage: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1920&q=80',
+    bgImage: '/carousel/slide1_certification.png',
+    imagePosition: 'object-center',
     primaryCtaText: 'Explore Courses',
     primaryCtaAction: 'courses',
     secondaryCtaText: 'Request Certificate',
@@ -34,38 +36,59 @@ export const heroSlidesData: HeroSlide[] = [
   },
   {
     id: 'slide-2',
-    badge: '🚀 NEW 3-MONTH DIPLOMA',
-    badgeColor: 'red',
-    title: 'Fast-Track Job Skills with',
-    highlightedText: 'Office Automation',
-    description: 'Master the corporate trio: Microsoft Word, Advanced Excel, and Tally Prime with GST for immediate office placement.',
-    bgImage: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1920&q=80',
-    primaryCtaText: 'View Course Syllabus',
-    primaryCtaAction: 'courses',
+    badge: '💻 100% Practical Smart Classroom',
+    badgeColor: 'blue',
+    title: 'Experience Interactive Training with',
+    highlightedText: 'Live Screen Casting',
+    description: 'Learn MS Office, Tally Prime, and coding on big interactive screens with live software demonstrations and 1:1 computer practice.',
+    bgImage: '/carousel/slide2_classroom.png',
+    imagePosition: 'object-center',
+    primaryCtaText: 'Take Virtual Lab Tour',
+    primaryCtaAction: 'lab-tour',
     secondaryCtaText: 'Book Free Demo Class',
     secondaryCtaAction: 'contact',
     stats: [
-      { value: '3 Months', label: 'Duration' },
-      { value: 'MS Office', label: 'Core Suite' },
-      { value: 'Tally Prime', label: 'With GST' }
+      { value: '1 : 1', label: 'System Ratio' },
+      { value: 'Live Demo', label: 'Smart Screen' },
+      { value: 'ISO 9001', label: 'Certified Labs' }
     ]
   },
   {
     id: 'slide-3',
-    badge: '💻 ISO 9001:2015 Certified Labs',
-    badgeColor: 'blue',
-    title: '100% Practical Training in',
-    highlightedText: 'Next-Gen Labs',
-    description: 'Guaranteed 1:1 computer ratio, modern Intel Core workstations, high-speed gigabit networking, and dedicated typing practice.',
-    bgImage: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1920&q=80',
-    primaryCtaText: 'Take Virtual Lab Tour',
-    primaryCtaAction: 'lab-tour',
-    secondaryCtaText: 'Meet Expert Faculty',
-    secondaryCtaAction: 'faculty',
+    badge: '👨‍🏫 Personal Faculty Mentorship',
+    badgeColor: 'yellow',
+    title: 'Learn Directly from Expert',
+    highlightedText: 'IT Faculty & Mentors',
+    description: 'Experienced BCA/MCA faculty offering individual attention, doubt-clearing sessions, and career guidance for every student.',
+    bgImage: '/carousel/slide3_mentorship.png',
+    imagePosition: 'object-center',
+    primaryCtaText: 'Meet Expert Faculty',
+    primaryCtaAction: 'faculty',
+    secondaryCtaText: 'Speak to Counselor',
+    secondaryCtaAction: 'contact',
     stats: [
-      { value: '1 : 1', label: 'System Ratio' },
-      { value: '40+ WPM', label: 'Target Typing' },
-      { value: 'ISO 9001', label: 'Certified Labs' }
+      { value: '1-on-1', label: 'Guidance' },
+      { value: 'Daily', label: 'Doubt Clearing' },
+      { value: '100%', label: 'Career Support' }
+    ]
+  },
+  {
+    id: 'slide-4',
+    badge: '🎓 1,500+ Proud Alumni Network',
+    badgeColor: 'red',
+    title: 'Build Your Future with the',
+    highlightedText: 'Apex Student Family',
+    description: 'Join a thriving community of learners, celebrate milestones together, and launch a successful career in government and private sectors.',
+    bgImage: '/carousel/slide4_community.png',
+    imagePosition: 'object-center',
+    primaryCtaText: 'Why Choose Apex',
+    primaryCtaAction: 'why-apex',
+    secondaryCtaText: 'Book Free Demo',
+    secondaryCtaAction: 'contact',
+    stats: [
+      { value: '1500+', label: 'Graduates' },
+      { value: 'Top Batches', label: 'Morning & Evening' },
+      { value: 'Lifetime', label: 'Lab Practice' }
     ]
   }
 ];

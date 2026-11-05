@@ -12,8 +12,7 @@ import {
   GraduationCap,
   CreditCard,
   CheckCircle2,
-  Compass,
-  Laptop
+  Compass
 } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { Badge } from '../ui/Badge';
@@ -197,8 +196,12 @@ export const Navbar: React.FC<NavbarProps> = () => {
             to="/"
             className="flex items-center gap-3 text-left group focus:outline-none"
           >
-            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-tr from-apex-blue-700 via-apex-blue-600 to-apex-yellow-400 flex items-center justify-center shadow-lg shadow-apex-blue-900/50 group-hover:scale-105 transition-transform">
-              <Laptop className="w-6 h-6 text-slate-950 stroke-[2.5]" />
+            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-slate-900 border border-slate-700/80 p-0.5 flex items-center justify-center overflow-hidden shadow-lg shadow-apex-blue-900/50 group-hover:scale-105 group-hover:border-apex-yellow-400/50 transition-all">
+              <img
+                src="/logo/apex_logo.jpeg"
+                alt="Apex Institute of Computer"
+                className="w-full h-full object-cover rounded-lg"
+              />
             </div>
             <div>
               <span className="font-display font-black text-lg sm:text-xl tracking-tight text-white group-hover:text-apex-yellow-400 transition-colors block leading-tight">

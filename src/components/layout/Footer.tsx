@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Laptop,
   MapPin,
   Phone,
   Mail,
@@ -34,8 +33,12 @@ export const Footer: React.FC<FooterProps> = () => {
           {/* Column 1: Brand & Credentials */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-apex-blue-700 via-apex-blue-600 to-apex-yellow-400 flex items-center justify-center shadow-lg shadow-apex-blue-900/40">
-                <Laptop className="w-6 h-6 text-slate-950 stroke-[2.5]" />
+              <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-700/80 p-0.5 flex items-center justify-center overflow-hidden shadow-lg shadow-apex-blue-900/40">
+                <img
+                  src="/logo/apex_logo.jpeg"
+                  alt="Apex Institute of Computer"
+                  className="w-full h-full object-cover rounded-lg"
+                />
               </div>
               <div>
                 <span className="font-display font-black text-xl text-white tracking-tight">

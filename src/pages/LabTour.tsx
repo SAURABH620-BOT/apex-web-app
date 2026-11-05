@@ -101,7 +101,7 @@ export const LabTour: React.FC<LabTourProps> = ({ onNavigate }) => {
                 <img
                   src={lab.imageUrl}
                   alt={lab.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className={`w-full h-full object-cover ${lab.imagePosition || 'object-center'} group-hover:scale-105 transition-transform duration-500`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent" />
                 <div className="absolute top-4 left-4">
@@ -181,7 +181,7 @@ export const LabTour: React.FC<LabTourProps> = ({ onNavigate }) => {
               <img
                 src={activeLabModal.imageUrl}
                 alt={activeLabModal.title}
-                className="w-full h-full object-cover"
+                className={`w-full h-full object-cover ${activeLabModal.imagePosition || 'object-center'}`}
               />
             </div>
 

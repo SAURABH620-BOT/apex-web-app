@@ -89,7 +89,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
               <img
                 src={activeSlide.bgImage}
                 alt="Apex Institute of Computer Campus & Labs"
-                className="w-full h-full object-cover object-center filter brightness-[0.62] contrast-[1.08] saturate-[1.1]"
+                className={`w-full h-full object-cover ${activeSlide.imagePosition || 'object-center'} filter brightness-[0.65] contrast-[1.06] saturate-[1.08]`}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/65 to-slate-950/15" />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-slate-950/30" />
