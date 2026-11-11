@@ -55,8 +55,16 @@ import {
   Card,
   DatePicker
 } from '../components/ui';
+import { useSEO } from '../hooks/useSEO';
 
 export const CertificatePortal: React.FC = () => {
+  useSEO({
+    title: 'Certificate Verification & Application Portal | Apex Institute Gaya',
+    description: 'Official student certificate verification and application portal for Apex Institute of Computer, Gaya.',
+    canonicalPath: '/portal',
+    noindex: true
+  });
+
   // Authentication state via encrypted localStorage vault
   const { isAuthenticated, user, isLoading: isAuthLoading, login, logout } = useAuth();
   const [loginUsername, setLoginUsername] = useState('');

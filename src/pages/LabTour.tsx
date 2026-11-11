@@ -12,12 +12,20 @@ import {
 import { labTourData, type LabZone } from '../data/labTourData';
 import { Heading, Text, Button, Badge, Card, Modal } from '../components/ui';
 import { useNavigate } from 'react-router-dom';
+import { useSEO } from '../hooks/useSEO';
 
 interface LabTourProps {
   onNavigate?: (page: string, subSection?: string) => void;
 }
 
 export const LabTour: React.FC<LabTourProps> = ({ onNavigate }) => {
+  useSEO({
+    title: 'High-Tech Computer Lab in Gaya | 50+ Dedicated Workstations - Apex Institute',
+    description: 'Explore the modern computer lab at Apex Institute Gaya. 50+ Intel Core i5 workstations, 1:1 dedicated PC access, Gigabit fiber LAN, online UPS & interactive seminar projector.',
+    keywords: 'Computer Lab in Gaya, High Tech Computer Lab Gaya, Practical Computer Training Gaya, Apex Institute Lab Tour',
+    canonicalPath: '/lab-tour'
+  });
+
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [activeLabModal, setActiveLabModal] = useState<LabZone | null>(null);

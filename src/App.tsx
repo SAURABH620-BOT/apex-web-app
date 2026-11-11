@@ -1,18 +1,23 @@
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import React, { Suspense } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { ScrollToTop } from './components/layout/ScrollToTop';
-import { Home } from './pages/Home';
-import { Courses } from './pages/Courses';
-import { CourseDetail } from './pages/CourseDetail';
-import { WhyApex } from './pages/WhyApex';
-import { Faculty } from './pages/Faculty';
-import { LabTour } from './pages/LabTour';
-import { Contact } from './pages/Contact';
-import { About } from './pages/About';
-import { CertificatePortal } from './pages/CertificatePortal';
+import { HeroSkeleton } from './components/skeletons/HeroSkeleton';
 import { useAuth } from './hooks/useAuth';
+
+// Route-level code splitting with React.lazy
+const Home = React.lazy(() => import('./pages/Home').then((m) => ({ default: m.Home })));
+const Courses = React.lazy(() => import('./pages/Courses').then((m) => ({ default: m.Courses })));
+const CourseDetail = React.lazy(() => import('./pages/CourseDetail').then((m) => ({ default: m.CourseDetail })));
+const WhyApex = React.lazy(() => import('./pages/WhyApex').then((m) => ({ default: m.WhyApex })));
+const Faculty = React.lazy(() => import('./pages/Faculty').then((m) => ({ default: m.Faculty })));
+const LabTour = React.lazy(() => import('./pages/LabTour').then((m) => ({ default: m.LabTour })));
+const Contact = React.lazy(() => import('./pages/Contact').then((m) => ({ default: m.Contact })));
+const About = React.lazy(() => import('./pages/About').then((m) => ({ default: m.About })));
+const CertificatePortal = React.lazy(() => import('./pages/CertificatePortal').then((m) => ({ default: m.CertificatePortal })));
+const NotFound = React.lazy(() => import('./pages/NotFound').then((m) => ({ default: m.NotFound })));
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -27,19 +32,21 @@ function AnimatedRoutes() {
         transition={{ duration: 0.22, ease: 'easeOut' }}
         className="flex-1 flex flex-col"
       >
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Home />} />
-          <Route path="/courses" element={<Courses />} />
-          <Route path="/courses/:courseCode" element={<CourseDetail />} />
-          <Route path="/why-apex" element={<WhyApex />} />
-          <Route path="/faculty" element={<Faculty />} />
-          <Route path="/lab-tour" element={<LabTour />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/about/:section" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/portal" element={<CertificatePortal />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
+        <Suspense fallback={<div className="pt-24 px-4 max-w-7xl mx-auto w-full"><HeroSkeleton /></div>}>
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/courses" element={<Courses />} />
+            <Route path="/courses/:courseCode" element={<CourseDetail />} />
+            <Route path="/why-apex" element={<WhyApex />} />
+            <Route path="/faculty" element={<Faculty />} />
+            <Route path="/lab-tour" element={<LabTour />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/about/:section" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/portal" element={<CertificatePortal />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
       </motion.div>
     </AnimatePresence>
   );

@@ -1,0 +1,20 @@
+# robots.txt for Apex Institute (Gaya, Bihar)
+# Website: https://apexinstitute.in
+
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /courses
+Allow: /courses/*
+Allow: /faculty
+Allow: /lab-tour
+Allow: /why-apex
+Allow: /contact
+
+# Protect private admin portal endpoints from search indexing
+Disallow: /portal
+Disallow: /portal/*
+
+# XML Sitemap Location
+Sitemap: https://apexinstitute.in/sitemap.xml
+

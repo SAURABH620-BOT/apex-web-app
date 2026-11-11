@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { aboutPagesData, affiliationsList } from '../data/aboutAffiliationsData';
 import { Heading, Text, Button, Badge, Card } from '../components/ui';
+import { useSEO } from '../hooks/useSEO';
 
 interface AboutProps {
   selectedSubSection?: string;
@@ -20,6 +21,13 @@ interface AboutProps {
 }
 
 export const About: React.FC<AboutProps> = ({ selectedSubSection }) => {
+  useSEO({
+    title: 'About Apex Institute | Certified Computer Training Center in Gaya, Bihar',
+    description: 'Learn about Apex Institute Gaya: our mission, 1500+ trained graduates, ISO certified computer diploma credentials, and practical pedagogy under Durgesh Sir.',
+    keywords: 'About Apex Institute, Computer Training Institute in Gaya, Coaching Institute in Gaya Bihar, Durgesh Sir Gaya, Computer Education Gaya',
+    canonicalPath: '/about'
+  });
+
   const params = useParams<{ section?: string }>();
   const navigate = useNavigate();
 

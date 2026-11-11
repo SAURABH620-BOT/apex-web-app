@@ -15,6 +15,7 @@ import { coursesData } from '../data/coursesData';
 import type { Course } from '../types/course';
 import { Heading, Text, Button, Badge, Card, Modal } from '../components/ui';
 import { useNavigate } from 'react-router-dom';
+import { useSEO } from '../hooks/useSEO';
 
 interface CoursesProps {
   onNavigate?: (page: string, subSection?: string) => void;
@@ -22,6 +23,33 @@ interface CoursesProps {
 }
 
 export const Courses: React.FC<CoursesProps> = ({ onNavigate, selectedCourseCode }) => {
+  useSEO({
+    title: 'Computer Courses in Gaya | ADCA, DCA, Tally Prime & DTP - Apex Institute',
+    description: 'Explore job-oriented computer diploma courses at Apex Institute Gaya. ADCA, DCA, DFA (Tally Prime), DTP & MS Office with 100% practical lab training & affordable fees.',
+    keywords: 'Computer Courses in Gaya, ADCA Course in Gaya, DCA Course in Gaya, Tally Classes in Gaya, DTP Course in Gaya, Computer Training Gaya, Professional Computer Courses in Gaya',
+    canonicalPath: '/courses',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      'name': 'Computer Courses at Apex Institute Gaya',
+      'itemListElement': coursesData.map((course, idx) => ({
+        '@type': 'ListItem',
+        'position': idx + 1,
+        'item': {
+          '@type': 'Course',
+          'name': course.name,
+          'description': course.description,
+          'provider': {
+            '@type': 'EducationalOrganization',
+            'name': 'Apex Institute',
+            'url': 'https://apexinstitute.in'
+          },
+          'url': `https://apexinstitute.in/courses/${course.id}`
+        }
+      }))
+    }
+  });
+
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedFilter, setSelectedFilter] = useState<'All' | '12 Months' | '6 Months' | '3 Months' | 'New'>('All');

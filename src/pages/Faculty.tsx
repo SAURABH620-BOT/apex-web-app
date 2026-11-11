@@ -8,12 +8,20 @@ import {
 import { facultyData } from '../data/facultyData';
 import { Heading, Text, Button, Badge, Card } from '../components/ui';
 import { useNavigate } from 'react-router-dom';
+import { useSEO } from '../hooks/useSEO';
 
 interface FacultyProps {
   onNavigate?: (page: string, subSection?: string) => void;
 }
 
 export const Faculty: React.FC<FacultyProps> = ({ onNavigate }) => {
+  useSEO({
+    title: 'Experienced Faculty & Computer Trainers in Gaya | Durgesh Sir - Apex Institute',
+    description: 'Meet the certified faculty at Apex Institute Gaya. Learn computer applications, Tally Prime & DTP directly from BCA/MCA educators with over a decade of teaching experience.',
+    keywords: 'Faculty Apex Institute, Durgesh Sir Gaya, Computer Teachers Gaya, Best Computer Faculty Gaya Bihar, Nitish Kumar, Ashutosh Kumar',
+    canonicalPath: '/faculty'
+  });
+
   const navigate = useNavigate();
   return (
     <div className="pt-28 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">

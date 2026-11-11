@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import { coursesData } from '../data/coursesData';
 import { Button, Badge, Card } from '../components/ui';
+import { useSEO } from '../hooks/useSEO';
 
 interface CourseDetailProps {
   courseCode?: string;
@@ -37,6 +38,63 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({ courseCode: propCour
     const cleanId = c.id.toLowerCase();
     return cleanCode === codeParam || cleanId === codeParam || cleanCode.replace(/\s+/g, '') === codeParam.replace(/\s+/g, '');
   }) || coursesData[0];
+
+  useSEO({
+    title: `${course.code} Course in Gaya (${course.name}) | Syllabus & Admission - Apex Institute`,
+    description: `Learn ${course.name} (${course.code}) at Apex Institute Gaya. ${course.duration} comprehensive diploma with 100% lab practice, Tally/MS Office skills & accredited certificate.`,
+    keywords: `${course.code} Course in Gaya, ${course.name} Gaya, ${course.code} Classes Gaya, Computer Course Admission Gaya, Apex Institute Gaya`,
+    canonicalPath: `/courses/${course.id}`,
+    schema: {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'Course',
+          'name': `${course.code} - ${course.name}`,
+          'description': course.description,
+          'provider': {
+            '@type': 'EducationalOrganization',
+            'name': 'Apex Institute',
+            'url': 'https://apexinstitute.in',
+            'address': {
+              '@type': 'PostalAddress',
+              'addressLocality': 'Gaya',
+              'addressRegion': 'Bihar',
+              'postalCode': '823001',
+              'addressCountry': 'IN'
+            }
+          },
+          'hasCourseInstance': {
+            '@type': 'CourseInstance',
+            'courseMode': 'onsite',
+            'courseWorkload': course.duration
+          }
+        },
+        {
+          '@type': 'BreadcrumbList',
+          'itemListElement': [
+            {
+              '@type': 'ListItem',
+              'position': 1,
+              'name': 'Home',
+              'item': 'https://apexinstitute.in/'
+            },
+            {
+              '@type': 'ListItem',
+              'position': 2,
+              'name': 'Courses',
+              'item': 'https://apexinstitute.in/courses'
+            },
+            {
+              '@type': 'ListItem',
+              'position': 3,
+              'name': `${course.code} Course`,
+              'item': `https://apexinstitute.in/courses/${course.id}`
+            }
+          ]
+        }
+      ]
+    }
+  });
 
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 

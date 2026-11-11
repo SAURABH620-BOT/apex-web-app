@@ -12,6 +12,7 @@ import { useFormValidation } from '../hooks/useFormValidation';
 import { validationRules } from '../helpers/validationRules';
 import { getWhatsAppNumber, getWhatsAppUrl, getInstituteAddress } from '../helpers/formatters';
 import { Heading, Text, Button, Input, TextArea, SelectDropdown, Badge, Card } from '../components/ui';
+import { useSEO } from '../hooks/useSEO';
 
 interface ContactFormData {
   fullName: string;
@@ -23,6 +24,33 @@ interface ContactFormData {
 }
 
 export const Contact: React.FC = () => {
+  useSEO({
+    title: 'Contact Apex Institute Gaya | Admission Inquiry & Campus Location',
+    description: 'Visit Apex Institute at Beldari Tola Nutan Nagar Rd, New Area, Gaya, Bihar 823001. Call or WhatsApp +91 6200043032 to book your free demo class today.',
+    keywords: 'Contact Apex Institute Gaya, Computer Institute in Gaya Address, Computer Institute in Gaya Near Me, Apex Institute Phone Number, Computer Admission Gaya',
+    canonicalPath: '/contact',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'ContactPage',
+      'name': 'Contact & Admissions - Apex Institute Gaya',
+      'url': 'https://apexinstitute.in/contact',
+      'mainEntity': {
+        '@type': 'EducationalOrganization',
+        'name': 'Apex Institute',
+        'telephone': '+916200043032',
+        'email': 'apex@apexinstitute.org',
+        'address': {
+          '@type': 'PostalAddress',
+          'streetAddress': 'Beldari Tola Nutan Nagar Rd, in front of Dr Pushkar & Shupriya Gupta, New Area',
+          'addressLocality': 'Gaya',
+          'addressRegion': 'Bihar',
+          'postalCode': '823001',
+          'addressCountry': 'IN'
+        }
+      }
+    }
+  });
+
   const [isSubmittedSuccessfully, setIsSubmittedSuccessfully] = useState(false);
   const [lastSubmittedWhatsAppUrl, setLastSubmittedWhatsAppUrl] = useState<string | null>(null);
 
@@ -376,6 +404,40 @@ export const Contact: React.FC = () => {
               </a>
             </div>
           </Card>
+        </div>
+      </div>
+
+      {/* Local SEO: How to Reach & Nearby Areas Served */}
+      <div className="pt-8 border-t border-slate-800/80 space-y-6">
+        <div className="text-center max-w-2xl mx-auto space-y-2">
+          <Badge variant="blue" size="sm">
+            Local Proximity & Accessibility
+          </Badge>
+          <h3 className="text-xl font-bold font-display text-white">
+            Conveniently Located in the Heart of Gaya City
+          </h3>
+          <p className="text-xs sm:text-sm text-slate-400">
+            Located at Beldari Tola, Nutan Nagar Road (New Area), Apex Institute is easily accessible by E-Rickshaw, Auto, and Bus from all major landmarks across Gaya and neighboring areas.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+          <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1.5">
+            <h4 className="font-bold text-apex-yellow-400">From Gaya Junction</h4>
+            <p className="text-slate-400">Approx. 2.5 km (10-12 mins). Regular E-Rickshaws available directly towards Nutan Nagar / New Area.</p>
+          </div>
+          <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1.5">
+            <h4 className="font-bold text-apex-yellow-400">From GB Road & Tower Chowk</h4>
+            <p className="text-slate-400">Approx. 1.8 km (7-8 mins). Central city location with seamless commute from Civil Lines & Rai Kashi Nath More.</p>
+          </div>
+          <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1.5">
+            <h4 className="font-bold text-apex-yellow-400">From Manpur & Buniyadganj</h4>
+            <p className="text-slate-400">Approx. 4.5 km (15-18 mins) via Falgu River Bridge. Direct auto/bus connectivity for daily commuting students.</p>
+          </div>
+          <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1.5">
+            <h4 className="font-bold text-apex-yellow-400">From Bodh Gaya & Chandauti</h4>
+            <p className="text-slate-400">Directly connected via Bodh Gaya Road and Gaya-Tekari Road with flexible morning and evening batch timings.</p>
+          </div>
         </div>
       </div>
     </div>

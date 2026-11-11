@@ -19,12 +19,20 @@ import {
 import { Heading, Text, Button, Badge, Card } from '../components/ui';
 import { useNavigate } from 'react-router-dom';
 import { getWhatsAppUrl } from '../helpers/formatters';
+import { useSEO } from '../hooks/useSEO';
 
 interface WhyApexProps {
   onNavigate?: (page: string, subSection?: string) => void;
 }
 
 export const WhyApex: React.FC<WhyApexProps> = ({ onNavigate }) => {
+  useSEO({
+    title: 'Why Choose Apex Institute | Best Computer Coaching in Gaya, Bihar',
+    description: 'Find out why 1500+ students choose Apex Institute in Gaya: 1:1 computer workstation access, daily practicals, certified faculty, bilingual typing labs & career assistance.',
+    keywords: 'Why Apex Institute, Best Computer Coaching in Gaya, Best Computer Classes Gaya, Computer Training Benefits Gaya',
+    canonicalPath: '/why-apex'
+  });
+
   const navigate = useNavigate();
 
   const keyMetrics = [

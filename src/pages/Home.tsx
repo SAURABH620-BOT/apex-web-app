@@ -20,12 +20,20 @@ import { facultyData } from '../data/facultyData';
 import { testimonialsData } from '../data/testimonialsData';
 import { Heading, Text, Button, Badge, Card } from '../components/ui';
 import { useNavigate } from 'react-router-dom';
+import { useSEO } from '../hooks/useSEO';
 
 interface HomeProps {
   onNavigate?: (page: string, subSection?: string) => void;
 }
 
 export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
+  useSEO({
+    title: 'Apex Institute | Best Computer Institute & Classes in Gaya, Bihar',
+    description: "Join Apex Institute, Gaya's leading computer training center. Learn ADCA, DCA, Tally Prime with GST, DTP & bilingual typing with 100% practical lab training. Enroll today!",
+    keywords: 'Computer Institute in Gaya, Best Computer Institute in Gaya, Computer Training Institute in Gaya, Computer Classes in Gaya, Computer Courses in Gaya, ADCA Course in Gaya, DCA Course in Gaya, Tally Classes in Gaya, Apex Institute Gaya',
+    canonicalPath: '/'
+  });
+
   const navigate = useNavigate();
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);

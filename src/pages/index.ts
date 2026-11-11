@@ -7,3 +7,4 @@ export * from './LabTour';
 export * from './Contact';
 export * from './About';
 export * from './CertificatePortal';
+export * from './NotFound';
