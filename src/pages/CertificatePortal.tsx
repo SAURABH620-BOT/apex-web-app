@@ -7,7 +7,6 @@ import {
   MessageSquare,
   FileText,
   Send,
-  Sparkles,
   ArrowRight,
   RotateCcw,
   Camera,
@@ -788,10 +787,6 @@ export const CertificatePortal: React.FC = () => {
                 Please enter all details accurately as they should appear on the official certificate.
               </p>
             </div>
-            <div className="flex items-center gap-2 text-xs text-apex-yellow-400 bg-amber-950/60 px-3 py-1.5 rounded-xl border border-amber-500/30 shrink-0">
-              <Sparkles className="w-4 h-4" />
-              <span>WhatsApp Direct Dispatch</span>
-            </div>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-8" noValidate>
@@ -1159,7 +1154,7 @@ export const CertificatePortal: React.FC = () => {
             <div className="pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="text-xs text-slate-400 flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Submitted data will be formatted and opened directly in WhatsApp.</span>
+                <span>Application will be securely forwarded for verification & dispatch.</span>
               </div>
 
               <Button
@@ -1172,7 +1167,7 @@ export const CertificatePortal: React.FC = () => {
                 rightIcon={<ArrowRight className="w-4 h-4" />}
                 className="w-full sm:w-auto font-bold"
               >
-                Submit & Send to WhatsApp
+                Submit Certificate Application
               </Button>
             </div>
           </form>

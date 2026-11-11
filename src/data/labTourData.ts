@@ -17,7 +17,7 @@ export const labTourData: LabZone[] = [
     tagline: '50+ High Performance Intel Workstations with High Speed LAN',
     category: 'Workstations',
     specs: ['Intel Core i5 / 16GB RAM', '24" Full HD IPS Displays', 'Windows 11 Pro Enterprise', 'Uninterrupted 10kVA Online UPS'],
-    imageUrl: '/lab/lab1_workstations.jpeg',
+    imageUrl: '/lab/lab1_adca_graduates.jpeg',
     imagePosition: 'object-center',
     description: 'Our primary technical lab features ergonomics seating and 1:1 dedicated computer access where students practice office suites, database design, web designing, and graphic processing without waiting turns.',
     highlights: ['Zero system sharing', 'Dedicated high-speed fiber internet', 'High resolution monitors']
@@ -28,7 +28,7 @@ export const labTourData: LabZone[] = [
     tagline: 'Specialized Enterprise Accounting & GST Portal Simulation Center',
     category: 'Accounting & Taxation',
     specs: ['Licensed Tally Prime Release 4.0+', 'Live GST Portal Sandbox', 'High-Speed Thermal & Laser Printers', 'Dual-Window Workstations'],
-    imageUrl: '/lab/lab2_accounting.jpeg',
+    imageUrl: '/lab/lab2_dfa_accounting.jpeg',
     imagePosition: 'object-center',
     description: 'Designed exclusively for commercial accounting students to simulate real-world company ledgers, voucher filings, balance sheet drafting, and income tax simulations under Nitish Kumar and Ashutosh Kumar.',
     highlights: ['Simulated business transactions', 'Real invoice printing practice', 'Bank reconciliation station']

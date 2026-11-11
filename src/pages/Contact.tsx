@@ -4,7 +4,6 @@ import {
   Phone,
   Mail,
   Clock,
-  Send,
   CheckCircle2,
   MessageSquare,
   Sparkles
@@ -25,6 +24,7 @@ interface ContactFormData {
 
 export const Contact: React.FC = () => {
   const [isSubmittedSuccessfully, setIsSubmittedSuccessfully] = useState(false);
+  const [lastSubmittedWhatsAppUrl, setLastSubmittedWhatsAppUrl] = useState<string | null>(null);
 
   const initialValues: ContactFormData = {
     fullName: '',
@@ -34,6 +34,23 @@ export const Contact: React.FC = () => {
     qualification: '',
     message: ''
   };
+
+  const courseOptions = [
+    { value: 'ADCA', label: 'ADCA - Advance Diploma in Computer Applications (12M)' },
+    { value: 'DCA', label: 'DCA - Diploma in Computer Applications (6M)' },
+    { value: 'DFA', label: 'DFA - Diploma in Financial Accounting (4M)' },
+    { value: 'DTP', label: 'DTP - Diploma in Desktop Publishing (3M)' },
+    { value: 'Office Work', label: 'Office Work & Automation - MS Word, Excel & Tally (3M)' },
+    { value: 'General Inquiry', label: 'General Inquiry / Custom Batch' }
+  ];
+
+  const qualificationOptions = [
+    { value: '10th Pass', label: '10th Matriculation' },
+    { value: '12th Pass', label: '12th Intermediate' },
+    { value: 'Graduation Pursuing', label: 'Graduation (Pursuing)' },
+    { value: 'Graduate', label: 'Graduate (Completed)' },
+    { value: 'Working Professional', label: 'Working Professional' }
+  ];
 
   const {
     values,
@@ -53,38 +70,55 @@ export const Contact: React.FC = () => {
     message: (val) => validationRules.required(val, 'Message')
   });
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const createInquiryWhatsAppMessage = (data: ContactFormData) => {
+    const courseObj = courseOptions.find((c) => c.value === data.courseInterested);
+    const courseText = courseObj ? courseObj.label : data.courseInterested;
+    const qualObj = qualificationOptions.find((q) => q.value === data.qualification);
+    const qualText = qualObj ? qualObj.label : (data.qualification || 'Not Specified');
+    const today = new Date().toLocaleDateString('en-IN', {
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric'
+    });
+
+    return (
+      `🎓 *APEX INSTITUTE OF COMPUTER*\n` +
+      `📩 *NEW STUDENT INQUIRY & DEMO CLASS*\n` +
+      `━━━━━━━━━━━━━━━━━━━━━━\n` +
+      `👤 *Student Name:* ${data.fullName}\n` +
+      `📱 *Mobile Number:* ${data.phone}\n` +
+      `📧 *Email:* ${data.email}\n` +
+      `🎓 *Qualification:* ${qualText}\n` +
+      `📚 *Course Interested:* ${courseText}\n` +
+      `━━━━━━━━━━━━━━━━━━━━━━\n` +
+      `💬 *Inquiry / Message:*\n${data.message}\n` +
+      `━━━━━━━━━━━━━━━━━━━━━━\n` +
+      `📅 *Date:* ${today}\n` +
+      `📍 *Source:* Website Inquiry Form`
+    );
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateAll()) return;
 
     setIsSubmitting(true);
-    // Simulating API inquiry dispatch
-    await new Promise((resolve) => setTimeout(resolve, 800));
+
+    const message = createInquiryWhatsAppMessage(values);
+    const whatsappUrl = getWhatsAppUrl(message, getWhatsAppNumber());
+    setLastSubmittedWhatsAppUrl(whatsappUrl);
+
+    // Open WhatsApp directly
+    window.open(whatsappUrl, '_blank');
+
     setIsSubmitting(false);
     setIsSubmittedSuccessfully(true);
     resetForm();
 
     setTimeout(() => {
       setIsSubmittedSuccessfully(false);
-    }, 6000);
+    }, 12000);
   };
-
-  const courseOptions = [
-    { value: 'ADCA', label: 'ADCA - Advance Diploma in Computer Applications (12M)' },
-    { value: 'DCA', label: 'DCA - Diploma in Computer Applications (6M)' },
-    { value: 'DFA', label: 'DFA - Diploma in Financial Accounting (4M)' },
-    { value: 'DTP', label: 'DTP - Diploma in Desktop Publishing (3M)' },
-    { value: 'Office Work', label: 'Office Work & Automation - MS Word, Excel & Tally (3M)' },
-    { value: 'General Inquiry', label: 'General Inquiry / Custom Batch' }
-  ];
-
-  const qualificationOptions = [
-    { value: '10th Pass', label: '10th Matriculation' },
-    { value: '12th Pass', label: '12th Intermediate' },
-    { value: 'Graduation Pursuing', label: 'Graduation (Pursuing)' },
-    { value: 'Graduate', label: 'Graduate (Completed)' },
-    { value: 'Working Professional', label: 'Working Professional' }
-  ];
 
   return (
     <div className="pt-28 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
@@ -113,19 +147,32 @@ export const Contact: React.FC = () => {
                 </h3>
               </div>
               <p className="text-xs sm:text-sm text-slate-400">
-                Fill in the details below. Our academic counselor will call you within 2 working hours.
+                Apni details darj karein aur batch timings, fee concessions aur free lab demo class ke liye hamare academic counselor se instantly connect karein.
               </p>
             </div>
 
             {isSubmittedSuccessfully && (
-              <div className="p-4 rounded-2xl bg-emerald-950/80 border border-emerald-500/50 flex items-start gap-3 text-emerald-200 animate-fadeIn">
-                <CheckCircle2 className="w-5 h-5 shrink-0 text-emerald-400 mt-0.5" />
-                <div className="text-xs sm:text-sm">
-                  <p className="font-bold">Thank you for your inquiry!</p>
-                  <p>
-                    Your message has been received by Apex Institute. Our admission coordinator will contact you shortly with batch options.
-                  </p>
+              <div className="p-4 rounded-2xl bg-emerald-950/90 border border-emerald-500/60 space-y-3 text-emerald-200 animate-fadeIn">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 shrink-0 text-emerald-400 mt-0.5" />
+                  <div className="text-xs sm:text-sm space-y-1">
+                    <p className="font-bold text-emerald-300">Inquiry Ready & Opening WhatsApp!</p>
+                    <p className="text-slate-300">
+                      Aapka inquiry data format hokar WhatsApp par bhej diya gaya hai. Agar chat automatically open na hui ho, toh niche button par click karein:
+                    </p>
+                  </div>
                 </div>
+                {lastSubmittedWhatsAppUrl && (
+                  <a
+                    href={lastSubmittedWhatsAppUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-all shadow-md"
+                  >
+                    <MessageSquare className="w-4 h-4" />
+                    <span>Continue to WhatsApp Chat</span>
+                  </a>
+                )}
               </div>
             )}
 
@@ -206,17 +253,24 @@ export const Contact: React.FC = () => {
                 onBlur={() => handleBlur('message')}
               />
 
-              <Button
-                type="submit"
-                variant="yellow"
-                fullWidth
-                size="lg"
-                isLoading={isSubmitting}
-                loadingText="Sending Inquiry..."
-                rightIcon={<Send className="w-4 h-4" />}
-              >
-                Submit Inquiry to Apex Institute
-              </Button>
+              <div className="space-y-2 pt-2">
+                <Button
+                  type="submit"
+                  variant="yellow"
+                  fullWidth
+                  size="lg"
+                  isLoading={isSubmitting}
+                  loadingText="Opening WhatsApp..."
+                  rightIcon={<MessageSquare className="w-4 h-4 text-slate-950" />}
+                  className="font-bold shadow-lg shadow-apex-yellow-900/20"
+                >
+                  Submit & Book Free Demo Class
+                </Button>
+                <p className="text-[11px] text-center text-slate-400 flex items-center justify-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span>Aapki inquiry priority ke saath hamare counselor tak pahunch jayegi • 100% Free Demo Session</span>
+                </p>
+              </div>
             </form>
           </Card>
         </div>
