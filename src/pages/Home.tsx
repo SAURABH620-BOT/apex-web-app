@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import {
   ChevronLeft,
   ChevronRight,
@@ -83,130 +82,173 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
-        <div className="relative min-h-[580px] sm:min-h-[620px] rounded-3xl overflow-hidden border border-slate-800 shadow-2xl flex items-center">
-          {/* Background Image Carousel with Framer Motion Crossfade */}
-          <AnimatePresence mode="wait">
-            <motion.div
+        <div className="relative rounded-3xl overflow-hidden border border-slate-800 shadow-2xl flex flex-col md:flex-row md:items-center bg-slate-900/90 md:min-h-[580px] lg:min-h-[620px]">
+          {/* Slide Media Banner */}
+          <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] md:aspect-auto md:absolute md:inset-0 md:z-0 overflow-hidden bg-slate-950">
+            <div
               key={activeSlide.id}
-              initial={{ opacity: 0, scale: 1.05 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.98 }}
-              transition={{ duration: 0.8, ease: 'easeInOut' }}
-              className="absolute inset-0 z-0"
+              className={`w-full h-full ${currentSlideIndex === 0 ? '' : 'animate-carousel-fade'}`}
             >
               <img
                 src={activeSlide.bgImage}
+                srcSet={activeSlide.id === 'slide-1' ? '/carousel/slide1_certification_mobile.webp 768w, /carousel/slide1_certification.webp 1280w' : undefined}
+                sizes="(max-width: 768px) 100vw, 1280px"
                 alt="Apex Institute of Computer Campus & Labs"
-                className={`w-full h-full object-cover ${activeSlide.imagePosition || 'object-center'} filter brightness-[0.65] contrast-[1.06] saturate-[1.08]`}
+                width={1280}
+                height={620}
+                loading={currentSlideIndex === 0 ? 'eager' : 'lazy'}
+                fetchPriority={currentSlideIndex === 0 ? 'high' : 'auto'}
+                className={`w-full h-full object-cover ${activeSlide.imagePosition || 'object-center'} filter brightness-[0.85] md:brightness-[0.65] contrast-[1.05] saturate-[1.08]`}
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/65 to-slate-950/15" />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-slate-950/30" />
-            </motion.div>
-          </AnimatePresence>
+              {/* Desktop smooth gradient overlays */}
+              <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/65 to-slate-950/15" />
+              <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-slate-950/30" />
+              {/* Mobile bottom subtle transition fade */}
+              <div className="md:hidden absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent pointer-events-none" />
+            </div>
 
-          {/* Slide Text Content with ample padding to prevent arrow overlap */}
-          <div className="relative z-10 max-w-4xl pl-16 pr-14 sm:pl-24 sm:pr-20 md:pl-28 md:pr-24 lg:pl-32 lg:pr-20 py-10 sm:py-14 lg:py-16 pb-16 sm:pb-20 flex flex-col justify-center">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeSlide.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5, ease: 'easeOut' }}
-                className="space-y-6"
-              >
-                {/* Badge */}
-                <div>
-                  <Badge
-                    variant={activeSlide.badgeColor}
-                    size="lg"
-                    leftIcon={<Sparkles className="w-3.5 h-3.5" />}
-                  >
-                    {activeSlide.badge}
-                  </Badge>
-                </div>
+            {/* Mobile Carousel Arrows (Positioned cleanly on image banner, never overlapping text) */}
+            <button
+              onClick={prevSlide}
+              aria-label="Previous slide"
+              className="md:hidden absolute left-2.5 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-slate-950/75 hover:bg-slate-900 text-white border border-slate-700/80 backdrop-blur-md flex items-center justify-center transition-all active:scale-95 shadow-lg"
+            >
+              <ChevronLeft className="w-4 h-4 text-slate-200" />
+            </button>
+            <button
+              onClick={nextSlide}
+              aria-label="Next slide"
+              className="md:hidden absolute right-2.5 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-slate-950/75 hover:bg-slate-900 text-white border border-slate-700/80 backdrop-blur-md flex items-center justify-center transition-all active:scale-95 shadow-lg"
+            >
+              <ChevronRight className="w-4 h-4 text-slate-200" />
+            </button>
 
-                {/* Main Heading */}
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-black font-display tracking-tight text-white leading-tight">
-                  {activeSlide.title}{' '}
-                  <span className="bg-gradient-to-r from-apex-yellow-400 via-amber-300 to-yellow-500 bg-clip-text text-transparent underline decoration-apex-red-500/80 decoration-4 underline-offset-8">
-                    {activeSlide.highlightedText}
-                  </span>
-                </h1>
-
-                {/* Subtitle description */}
-                <Text size="lg" className="text-slate-300 max-w-2xl">
-                  {activeSlide.description}
-                </Text>
-
-                {/* CTA Action Buttons */}
-                <div className="flex flex-wrap items-center gap-4 pt-2">
-                  <Button
-                    size="lg"
-                    variant="yellow"
-                    onClick={() => handleNav(activeSlide.primaryCtaAction)}
-                    rightIcon={<ArrowRight className="w-4 h-4" />}
-                  >
-                    {activeSlide.primaryCtaText}
-                  </Button>
-
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    onClick={() => handleNav(activeSlide.secondaryCtaAction)}
-                  >
-                    {activeSlide.secondaryCtaText}
-                  </Button>
-                </div>
-
-                {/* Live Stats Snippets */}
-                <div className="pt-5 border-t border-slate-800/90 grid grid-cols-3 gap-4 max-w-md">
-                  {activeSlide.stats.map((s, idx) => (
-                    <div key={idx} className="space-y-0.5">
-                      <p className="text-lg sm:text-xl font-extrabold font-display text-white">
-                        {s.value}
-                      </p>
-                      <p className="text-[10px] sm:text-[11px] text-slate-400 uppercase tracking-wider font-semibold">
-                        {s.label}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            </AnimatePresence>
+            {/* Mobile Carousel Dots */}
+            <div className="md:hidden absolute bottom-2 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1 bg-slate-950/70 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-slate-800/80 shadow-md">
+              {heroSlidesData.map((slide, idx) => (
+                <button
+                  key={slide.id}
+                  type="button"
+                  onClick={() => setCurrentSlideIndex(idx)}
+                  className="w-5 h-5 flex items-center justify-center cursor-pointer focus:outline-none"
+                  aria-label={`Go to slide ${idx + 1}`}
+                >
+                  <span
+                    className={`h-1.5 rounded-full transition-all duration-300 block ${
+                      idx === currentSlideIndex
+                        ? 'w-5 bg-apex-yellow-400 shadow-sm shadow-apex-yellow-400/50'
+                        : 'w-1.5 bg-slate-600 hover:bg-slate-400'
+                    }`}
+                  />
+                </button>
+              ))}
+            </div>
           </div>
 
-          {/* Left Arrow (Vertically Centered on Left Border) */}
+          {/* Slide Text Content with ample padding */}
+          <div className="relative z-10 w-full md:max-w-4xl p-5 sm:p-7 md:pl-28 md:pr-24 lg:pl-32 lg:pr-20 py-6 sm:py-8 md:py-14 pb-8 sm:pb-10 md:pb-20 flex flex-col justify-center">
+            <div
+              key={activeSlide.id}
+              className={`space-y-4 sm:space-y-5 md:space-y-6 ${currentSlideIndex === 0 ? '' : 'animate-carousel-slide'}`}
+            >
+              {/* Badge */}
+              <div>
+                <Badge
+                  variant={activeSlide.badgeColor}
+                  size="md"
+                  leftIcon={<Sparkles className="w-3.5 h-3.5" />}
+                >
+                  {activeSlide.badge}
+                </Badge>
+              </div>
+
+              {/* Main Heading */}
+              <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-[44px] font-black font-display tracking-tight text-white leading-tight">
+                {activeSlide.title}{' '}
+                <span className="bg-gradient-to-r from-apex-yellow-400 via-amber-300 to-yellow-500 bg-clip-text text-transparent underline decoration-apex-red-500/80 decoration-4 underline-offset-8">
+                  {activeSlide.highlightedText}
+                </span>
+              </h1>
+
+              {/* Subtitle description */}
+              <Text size="md" className="text-slate-300 max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed">
+                {activeSlide.description}
+              </Text>
+
+              {/* CTA Action Buttons */}
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3 pt-1">
+                <Button
+                  size="lg"
+                  variant="yellow"
+                  onClick={() => handleNav(activeSlide.primaryCtaAction)}
+                  rightIcon={<ArrowRight className="w-4 h-4" />}
+                  className="w-full sm:w-auto"
+                >
+                  {activeSlide.primaryCtaText}
+                </Button>
+
+                <Button
+                  size="lg"
+                  variant="outline"
+                  onClick={() => handleNav(activeSlide.secondaryCtaAction)}
+                  className="w-full sm:w-auto"
+                >
+                  {activeSlide.secondaryCtaText}
+                </Button>
+              </div>
+
+              {/* Live Stats Snippets */}
+              <div className="pt-4 border-t border-slate-800/90 grid grid-cols-3 gap-2 sm:gap-4 max-w-md">
+                {activeSlide.stats.map((s, idx) => (
+                  <div key={idx} className="space-y-0.5">
+                    <p className="text-base sm:text-xl font-extrabold font-display text-white">
+                      {s.value}
+                    </p>
+                    <p className="text-[10px] sm:text-[11px] text-slate-400 uppercase tracking-wider font-semibold">
+                      {s.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop Left Arrow (Vertically Centered on Left Border) */}
           <button
             onClick={prevSlide}
             aria-label="Previous slide"
-            className="absolute left-2 sm:left-4 md:left-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-slate-900/85 hover:bg-slate-800 text-white border border-slate-700/80 hover:border-apex-yellow-400 backdrop-blur-md flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 shadow-2xl group cursor-pointer"
+            className="hidden md:flex absolute left-4 md:left-5 top-1/2 -translate-y-1/2 z-20 w-11 h-11 md:w-12 md:h-12 rounded-full bg-slate-900/85 hover:bg-slate-800 text-white border border-slate-700/80 hover:border-apex-yellow-400 backdrop-blur-md items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 shadow-2xl group cursor-pointer"
           >
             <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-slate-300 group-hover:text-apex-yellow-400 transition-colors" />
           </button>
 
-          {/* Right Arrow (Vertically Centered on Right Border) */}
+          {/* Desktop Right Arrow (Vertically Centered on Right Border) */}
           <button
             onClick={nextSlide}
             aria-label="Next slide"
-            className="absolute right-2 sm:right-4 md:right-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-slate-900/85 hover:bg-slate-800 text-white border border-slate-700/80 hover:border-apex-yellow-400 backdrop-blur-md flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 shadow-2xl group cursor-pointer"
+            className="hidden md:flex absolute right-4 md:right-5 top-1/2 -translate-y-1/2 z-20 w-11 h-11 md:w-12 md:h-12 rounded-full bg-slate-900/85 hover:bg-slate-800 text-white border border-slate-700/80 hover:border-apex-yellow-400 backdrop-blur-md items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 shadow-2xl group cursor-pointer"
           >
             <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-slate-300 group-hover:text-apex-yellow-400 transition-colors" />
           </button>
 
-          {/* Carousel Dots (Centered at Bottom) */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 bg-slate-950/70 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-slate-800/80 shadow-xl">
+          {/* Desktop Carousel Dots (Centered at Bottom) */}
+          <div className="hidden md:flex absolute bottom-6 left-1/2 -translate-x-1/2 z-20 items-center gap-1 bg-slate-950/70 backdrop-blur-md px-3 py-1 rounded-full border border-slate-800/80 shadow-xl">
             {heroSlidesData.map((slide, idx) => (
               <button
                 key={slide.id}
+                type="button"
                 onClick={() => setCurrentSlideIndex(idx)}
-                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                  idx === currentSlideIndex
-                    ? 'w-8 bg-apex-yellow-400 shadow-sm shadow-apex-yellow-400/50'
-                    : 'w-2 bg-slate-600 hover:bg-slate-400'
-                }`}
+                className="w-7 h-7 flex items-center justify-center cursor-pointer focus:outline-none"
                 aria-label={`Go to slide ${idx + 1}`}
-              />
+              >
+                <span
+                  className={`h-2 rounded-full transition-all duration-300 block ${
+                    idx === currentSlideIndex
+                      ? 'w-8 bg-apex-yellow-400 shadow-sm shadow-apex-yellow-400/50'
+                      : 'w-2 bg-slate-600 hover:bg-slate-400'
+                  }`}
+                />
+              </button>
             ))}
           </div>
         </div>
@@ -264,7 +306,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
       {/* ========================================================
           FEATURED COURSES PREVIEW (STRICTLY NO FEES DISPLAYED)
          ======================================================== */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 content-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div className="space-y-3">
             <Badge variant="blue" size="md">
@@ -388,7 +430,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
       {/* ========================================================
           WHY CHOOSE APEX INSTITUTE
          ======================================================== */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 content-auto">
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <Badge variant="yellow" size="md">
             The Apex Advantage
@@ -452,7 +494,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                 <div className={`w-12 h-12 rounded-2xl ${item.bg} flex items-center justify-center border border-white/10`}>
                   <Icon className={`w-6 h-6 ${item.color}`} />
                 </div>
-                <h4 className="text-lg font-bold font-display text-white">{item.title}</h4>
+                <h3 className="text-lg font-bold font-display text-white">{item.title}</h3>
                 <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">{item.desc}</p>
               </Card>
             );
@@ -463,7 +505,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
       {/* ========================================================
           FACULTY HIGHLIGHT PREVIEW
          ======================================================== */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 content-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div className="space-y-3">
             <Badge variant="blue" size="md">
@@ -502,7 +544,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                 </span>
               </div>
 
-              <h4 className="text-lg font-bold font-display text-white">{f.name}</h4>
+              <h3 className="text-lg font-bold font-display text-white">{f.name}</h3>
               <p className="text-xs text-apex-blue-300 font-semibold mb-1">{f.designation}</p>
               <p className="text-[11px] text-slate-400 font-mono mb-3">{f.qualification}</p>
 
@@ -528,7 +570,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
       {/* ========================================================
           TESTIMONIALS & ALUMNI SUCCESS
          ======================================================== */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 content-auto">
         <div className="text-center max-w-2xl mx-auto space-y-3">
           <Badge variant="yellow" size="md">
             Alumni Voices
@@ -562,9 +604,9 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                   </span>
                 </div>
                 <div>
-                  <h5 className="text-xs font-bold text-white">{t.name}</h5>
+                  <p className="text-xs font-bold text-white">{t.name}</p>
                   <p className="text-[10px] text-apex-yellow-400 font-semibold">{t.currentRole}</p>
-                  <p className="text-[10px] text-slate-500">{t.companyOrDept}</p>
+                  <p className="text-[10px] text-slate-400">{t.companyOrDept}</p>
                 </div>
               </div>
             </Card>
@@ -575,7 +617,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
       {/* ========================================================
           CALL TO ACTION (CTA) SECTION
          ======================================================== */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 content-auto">
         <div className="relative rounded-3xl bg-gradient-to-tr from-apex-blue-900 via-slate-900 to-indigo-950 border border-apex-blue-500/40 p-8 sm:p-14 overflow-hidden shadow-2xl text-center space-y-6">
           <div className="max-w-2xl mx-auto space-y-4 relative z-10">
             <Badge variant="yellow" size="lg" leftIcon={<Sparkles className="w-4 h-4" />}>

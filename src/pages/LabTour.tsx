@@ -105,7 +105,7 @@ export const LabTour: React.FC<LabTourProps> = ({ onNavigate }) => {
           >
             <div>
               {/* Image Banner with overlay */}
-              <div className="relative h-64 sm:h-72 overflow-hidden bg-slate-900">
+              <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] md:h-72 overflow-hidden bg-slate-950">
                 <img
                   src={lab.imageUrl}
                   alt={lab.title}
@@ -185,11 +185,11 @@ export const LabTour: React.FC<LabTourProps> = ({ onNavigate }) => {
           size="lg"
         >
           <div className="space-y-4 text-slate-300">
-            <div className="rounded-2xl overflow-hidden h-72 sm:h-96 w-full bg-slate-900">
+            <div className="rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-[16/9] max-h-[65vh] w-full bg-slate-950 flex items-center justify-center border border-slate-800">
               <img
                 src={activeLabModal.imageUrl}
                 alt={activeLabModal.title}
-                className={`w-full h-full object-cover ${activeLabModal.imagePosition || 'object-center'}`}
+                className="w-full h-full object-contain"
               />
             </div>
 

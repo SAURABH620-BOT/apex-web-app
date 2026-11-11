@@ -347,11 +347,13 @@ export const WhyApex: React.FC<WhyApexProps> = ({ onNavigate }) => {
 
         <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8 relative z-10">
           <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-tr from-apex-blue-600 to-apex-yellow-400 p-1 shrink-0 shadow-xl shadow-apex-yellow-400/10 overflow-hidden">
-            <div className="w-full h-full bg-slate-950 rounded-xl flex items-center justify-center overflow-hidden">
+            <div className="w-full h-full bg-slate-950 rounded-xl flex items-center justify-center overflow-hidden p-1.5">
               <img
-                src="/logo/apex_logo.jpeg"
+                src="/logo/apex_logo.webp"
                 alt="Apex Institute Logo"
-                className="w-full h-full object-cover"
+                width="96"
+                height="96"
+                className="w-full h-full object-contain"
               />
             </div>
           </div>

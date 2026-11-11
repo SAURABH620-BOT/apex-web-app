@@ -35,9 +35,11 @@ export const Footer: React.FC<FooterProps> = () => {
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-700/80 p-0.5 flex items-center justify-center overflow-hidden shadow-lg shadow-apex-blue-900/40">
                 <img
-                  src="/logo/apex_logo.jpeg"
+                  src="/logo/apex_logo.webp"
                   alt="Apex Institute of Computer"
-                  className="w-full h-full object-cover rounded-lg"
+                  width="48"
+                  height="48"
+                  className="w-full h-full object-contain rounded-lg p-0.5"
                 />
               </div>
               <div>
@@ -69,9 +71,9 @@ export const Footer: React.FC<FooterProps> = () => {
 
           {/* Column 2: Courses */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-white font-display">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-white font-display">
               Programs Offered
-            </h4>
+            </h3>
             <ul className="space-y-2 text-sm">
               {[
                 { code: 'ADCA', slug: 'adca', label: 'ADCA (12 Months)' },
@@ -100,9 +102,9 @@ export const Footer: React.FC<FooterProps> = () => {
 
           {/* Column 3: About & Statutory Affiliations */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-white font-display">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-white font-display">
               Affiliations & Legal
-            </h4>
+            </h3>
             <ul className="space-y-2 text-sm">
               {[
                 { id: 'about-ica', label: 'About ICA Network' },
@@ -130,9 +132,9 @@ export const Footer: React.FC<FooterProps> = () => {
 
           {/* Column 4: Contact & Lab Hours */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-white font-display">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-white font-display">
               Campus & Support
-            </h4>
+            </h3>
             <div className="space-y-3 text-xs sm:text-sm text-slate-400">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-apex-red-400 shrink-0 mt-0.5" />

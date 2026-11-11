@@ -198,8 +198,10 @@ export const Navbar: React.FC<NavbarProps> = () => {
           >
             <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-slate-900 border border-slate-700/80 p-0.5 flex items-center justify-center overflow-hidden shadow-lg shadow-apex-blue-900/50 group-hover:scale-105 group-hover:border-apex-yellow-400/50 transition-all">
               <img
-                src="/logo/apex_logo.jpeg"
+                src="/logo/apex_logo.webp"
                 alt="Apex Institute of Computer"
+                width="44"
+                height="44"
                 className="w-full h-full object-cover rounded-lg"
               />
             </div>
