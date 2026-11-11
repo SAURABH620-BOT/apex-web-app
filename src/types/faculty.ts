@@ -1,6 +1,7 @@
 export interface Faculty {
   id: string;
   name: string;
+  initials: string;
   designation: string;
   qualification: string;
   experienceYears: number;

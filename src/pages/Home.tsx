@@ -482,12 +482,12 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
           {facultyData.map((f) => (
             <Card key={f.id} variant="interactive" className="text-center flex flex-col items-center">
               <div className="relative mb-6">
-                <div className="w-28 h-28 rounded-full p-1 bg-gradient-to-tr from-apex-blue-600 via-apex-blue-500 to-apex-yellow-400 shadow-xl">
-                  <img
-                    src={f.avatarUrl}
-                    alt={f.name}
-                    className="w-full h-full rounded-full object-cover object-top bg-slate-900"
-                  />
+                <div className="w-28 h-28 rounded-full p-1 bg-gradient-to-tr from-apex-blue-600 via-apex-blue-500 to-apex-yellow-400 shadow-xl flex items-center justify-center">
+                  <div className="w-full h-full rounded-full bg-slate-950 border border-slate-800 flex items-center justify-center">
+                    <span className="text-3xl font-black font-display text-transparent bg-clip-text bg-gradient-to-br from-apex-yellow-400 via-amber-200 to-apex-blue-400 tracking-wider">
+                      {f.initials}
+                    </span>
+                  </div>
                 </div>
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 whitespace-nowrap px-3 py-1 rounded-full bg-apex-yellow-400 text-slate-950 text-[11px] font-bold font-display shadow-lg border-2 border-slate-900 z-10">
                   {f.experienceText}
@@ -548,11 +548,11 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
               </div>
 
               <div className="pt-4 border-t border-slate-800/80 flex items-center gap-3">
-                <img
-                  src={t.avatarUrl}
-                  alt={t.name}
-                  className="w-10 h-10 rounded-full object-cover ring-2 ring-apex-blue-500/40"
-                />
+                <div className="w-10 h-10 rounded-full bg-slate-900 border border-slate-700/80 flex items-center justify-center shrink-0 ring-2 ring-apex-blue-500/30">
+                  <span className="text-xs font-bold font-display text-apex-yellow-400 tracking-wider">
+                    {t.name.split(' ').map((n) => n[0]).join('').slice(0, 2)}
+                  </span>
+                </div>
                 <div>
                   <h5 className="text-xs font-bold text-white">{t.name}</h5>
                   <p className="text-[10px] text-apex-yellow-400 font-semibold">{t.currentRole}</p>

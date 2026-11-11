@@ -320,9 +320,9 @@ export const Contact: React.FC = () => {
                     href={getWhatsAppUrl('Hello Apex Computer Institute! I have an inquiry.')}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-emerald-400 hover:text-emerald-300 hover:underline inline-flex items-center gap-1.5"
+                    className="text-xs text-emerald-400 hover:text-emerald-300 hover:underline inline-flex items-center gap-1.5 whitespace-nowrap"
                   >
-                    <span>{getWhatsAppNumber()}</span>
+                    <span className="whitespace-nowrap">{getWhatsAppNumber()}</span>
                     <span className="text-[10px] bg-emerald-500/20 text-emerald-300 px-1.5 py-0.2 rounded font-medium">Chat Now</span>
                   </a>
                 </div>

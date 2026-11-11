@@ -42,12 +42,12 @@ export const Faculty: React.FC<FacultyProps> = ({ onNavigate }) => {
               {/* Avatar and Top Badge */}
               <div className="flex flex-col items-center text-center pb-6 border-b border-slate-800">
                 <div className="relative mb-6">
-                  <div className="w-32 h-32 rounded-full p-1 bg-gradient-to-tr from-apex-blue-600 via-apex-blue-500 to-apex-yellow-400 shadow-xl">
-                    <img
-                      src={faculty.avatarUrl}
-                      alt={faculty.name}
-                      className="w-full h-full rounded-full object-cover object-top bg-slate-900"
-                    />
+                  <div className="w-32 h-32 rounded-full p-1 bg-gradient-to-tr from-apex-blue-600 via-apex-blue-500 to-apex-yellow-400 shadow-xl flex items-center justify-center">
+                    <div className="w-full h-full rounded-full bg-slate-950 border border-slate-800 flex items-center justify-center">
+                      <span className="text-4xl font-black font-display text-transparent bg-clip-text bg-gradient-to-br from-apex-yellow-400 via-amber-200 to-apex-blue-400 tracking-wider">
+                        {faculty.initials}
+                      </span>
+                    </div>
                   </div>
                   <span className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 whitespace-nowrap px-3.5 py-1 rounded-full bg-apex-yellow-400 text-slate-950 text-xs font-black font-display shadow-lg border-2 border-slate-900 z-10">
                     {faculty.experienceText}

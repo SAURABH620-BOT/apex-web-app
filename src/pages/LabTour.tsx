@@ -97,21 +97,21 @@ export const LabTour: React.FC<LabTourProps> = ({ onNavigate }) => {
           >
             <div>
               {/* Image Banner with overlay */}
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-64 sm:h-72 overflow-hidden bg-slate-900">
                 <img
                   src={lab.imageUrl}
                   alt={lab.title}
                   className={`w-full h-full object-cover ${lab.imagePosition || 'object-center'} group-hover:scale-105 transition-transform duration-500`}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent" />
-                <div className="absolute top-4 left-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute top-4 left-4 pointer-events-none">
                   <Badge variant="blue" size="sm">
                     {lab.category}
                   </Badge>
                 </div>
                 <button
                   onClick={() => setActiveLabModal(lab)}
-                  className="absolute bottom-4 right-4 p-2 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-white border border-slate-700/80 backdrop-blur-md transition-all cursor-pointer"
+                  className="absolute bottom-4 right-4 p-2 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-white border border-slate-700/80 backdrop-blur-md transition-all cursor-pointer z-10"
                   title="Expand Lab Photo & Specs"
                 >
                   <Maximize2 className="w-4 h-4" />
@@ -177,7 +177,7 @@ export const LabTour: React.FC<LabTourProps> = ({ onNavigate }) => {
           size="lg"
         >
           <div className="space-y-4 text-slate-300">
-            <div className="rounded-2xl overflow-hidden h-72 w-full">
+            <div className="rounded-2xl overflow-hidden h-72 sm:h-96 w-full bg-slate-900">
               <img
                 src={activeLabModal.imageUrl}
                 alt={activeLabModal.title}

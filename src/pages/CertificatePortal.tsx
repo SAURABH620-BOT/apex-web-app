@@ -560,7 +560,7 @@ export const CertificatePortal: React.FC = () => {
           Request for Certificate
         </Heading>
         <Text size="lg" className="text-slate-300">
-          Complete the official student application form below. Once submitted, your details will be recorded and forwarded directly to the Apex Institute administration on WhatsApp for verification & dispatch.
+          Submit your course completion and enrollment details below to request your accredited diploma certificate. Every application is authenticated directly by the Apex Academic Cell for verified grading, QR registration, and expedited dispatch.
         </Text>
       </div>
 

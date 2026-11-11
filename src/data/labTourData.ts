@@ -17,7 +17,7 @@ export const labTourData: LabZone[] = [
     tagline: '50+ High Performance Intel Workstations with High Speed LAN',
     category: 'Workstations',
     specs: ['Intel Core i5 / 16GB RAM', '24" Full HD IPS Displays', 'Windows 11 Pro Enterprise', 'Uninterrupted 10kVA Online UPS'],
-    imageUrl: '/lab/lab1_adca_graduates.jpeg',
+    imageUrl: '/lab/lab1_workstations.jpeg',
     imagePosition: 'object-center',
     description: 'Our primary technical lab features ergonomics seating and 1:1 dedicated computer access where students practice office suites, database design, web designing, and graphic processing without waiting turns.',
     highlights: ['Zero system sharing', 'Dedicated high-speed fiber internet', 'High resolution monitors']
@@ -29,7 +29,7 @@ export const labTourData: LabZone[] = [
     category: 'Accounting & Taxation',
     specs: ['Licensed Tally Prime Release 4.0+', 'Live GST Portal Sandbox', 'High-Speed Thermal & Laser Printers', 'Dual-Window Workstations'],
     imageUrl: '/lab/lab2_dfa_accounting.jpeg',
-    imagePosition: 'object-center',
+    imagePosition: 'object-[center_35%]',
     description: 'Designed exclusively for commercial accounting students to simulate real-world company ledgers, voucher filings, balance sheet drafting, and income tax simulations under Nitish Kumar and Ashutosh Kumar.',
     highlights: ['Simulated business transactions', 'Real invoice printing practice', 'Bank reconciliation station']
   },
@@ -39,7 +39,8 @@ export const labTourData: LabZone[] = [
     tagline: 'Dedicated Bilingual Keyboard Layouts (Hindi Kruti Dev / Remington & English)',
     category: 'Typing & Speed Lab',
     specs: ['Mechanical Feel Typing Keyboards', 'Custom Speed Metric Software', 'Hindi Mangal & Kruti Dev layouts', 'Real-time WPM & Accuracy Trackers'],
-    imageUrl: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=1000&q=80',
+    imageUrl: '/lab/lab3_typing.jpeg',
+    imagePosition: 'object-center',
     description: 'Speed typing is crucial for government clerkships, court typists, and corporate assistants. Our typing arena helps learners progress from 10 WPM to 45+ WPM with 95%+ accuracy within weeks.',
     highlights: ['Bilingual typing certification', 'Daily speed leaderboard', 'Ergonomic wrist-support desks']
   },
@@ -49,8 +50,8 @@ export const labTourData: LabZone[] = [
     tagline: 'Audio-Visual Conceptual Clarification & Career Workshops',
     category: 'Smart Classroom',
     specs: ['4K Interactive Laser Projector', 'Surround Audio Systems', 'Live Screen Casting for Code Demonstrations', 'Capacity: 60+ Students'],
-    imageUrl: '/lab/lab4.jpeg',
-    imagePosition: 'object-top',
+    imageUrl: '/lab/lab4_seminar.jpeg',
+    imagePosition: 'object-center',
     description: 'Where Durgesh Sir and visiting industry experts conduct live code walk-throughs, resume building bootcamps, and career guidance seminars.',
     highlights: ['Visual interactive learning', 'Guest lectures from IT alumni', 'Recorded session playbacks']
   }

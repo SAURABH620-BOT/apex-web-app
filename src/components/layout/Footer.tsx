@@ -140,22 +140,22 @@ export const Footer: React.FC<FooterProps> = () => {
                   {getInstituteAddress()}
                 </span>
               </div>
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2.5 flex-nowrap">
                 <Phone className="w-4 h-4 text-apex-yellow-400 shrink-0" />
                 <a
                   href={`tel:${(import.meta.env.VITE_SUPPORT_PHONE || '+91 6200043032').replace(/\s+/g, '')}`}
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-colors whitespace-nowrap"
                 >
                   {import.meta.env.VITE_SUPPORT_PHONE || '+91 6200043032'}
                 </a>
               </div>
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2.5 flex-nowrap">
                 <MessageSquare className="w-4 h-4 text-emerald-400 shrink-0" />
                 <a
                   href={getWhatsAppUrl('Hello Apex Computer Institute!')}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-emerald-300 text-slate-400 transition-colors"
+                  className="hover:text-emerald-300 text-slate-400 transition-colors whitespace-nowrap"
                 >
                   WhatsApp: {getWhatsAppNumber()}
                 </a>
