@@ -131,7 +131,7 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({ courseCode: propCour
       <div className="relative rounded-2xl sm:rounded-3xl bg-gradient-to-tr from-apex-blue-950/90 via-slate-900 to-slate-900 border border-apex-blue-500/40 p-5 sm:p-12 overflow-hidden shadow-2xl">
         <div className="relative z-10 max-w-3xl space-y-6">
           <div className="flex flex-wrap items-center gap-2.5">
-            <span className="font-mono text-sm font-bold px-3 py-1 rounded-xl bg-apex-blue-900 text-apex-blue-300 border border-apex-blue-500/40">
+            <span className="font-mono text-sm font-bold px-3 py-1 rounded-xl bg-apex-blue-900 text-apex-blue-300 border border-apex-blue-500/40 whitespace-nowrap shrink-0">
               {course.code}
             </span>
             {course.isNew && (

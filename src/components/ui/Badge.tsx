@@ -36,7 +36,7 @@ export const Badge: React.FC<BadgeProps> = ({
   return (
     <span
       className={cn(
-        'inline-flex flex-wrap items-center justify-center tracking-wide uppercase select-none transition-colors duration-150 max-w-full text-center',
+        'inline-flex items-center justify-center whitespace-nowrap shrink-0 tracking-wide uppercase select-none transition-colors duration-150 leading-none',
         isPill ? 'rounded-full' : 'rounded-lg',
         sizeStyles,
         variantStyles,
@@ -44,8 +44,8 @@ export const Badge: React.FC<BadgeProps> = ({
       )}
       {...props}
     >
-      {leftIcon && <span className="inline-flex shrink-0">{leftIcon}</span>}
-      <span className="break-words">{children}</span>
+      {leftIcon && <span className="inline-flex shrink-0 items-center">{leftIcon}</span>}
+      <span className="inline-flex items-center leading-none">{children}</span>
     </span>
   );
 };
