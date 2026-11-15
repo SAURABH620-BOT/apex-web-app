@@ -18,10 +18,10 @@ export const Text: React.FC<TextProps> = ({
 }) => {
   const sizeStyles = {
     xs: 'text-xs',
-    sm: 'text-sm leading-relaxed',
-    md: 'text-base leading-relaxed',
-    lg: 'text-lg leading-relaxed',
-    xl: 'text-xl leading-relaxed'
+    sm: 'text-xs sm:text-sm leading-relaxed',
+    md: 'text-sm sm:text-base leading-relaxed',
+    lg: 'text-base sm:text-lg leading-relaxed',
+    xl: 'text-lg sm:text-xl leading-relaxed'
   }[size];
 
   const variantStyles = {

@@ -234,7 +234,7 @@ export const Courses: React.FC<CoursesProps> = ({ onNavigate, selectedCourseCode
             </div>
 
             {/* Bottom Actions */}
-            <div className="pt-4 border-t border-slate-800 flex items-center justify-between gap-3">
+            <div className="pt-4 border-t border-slate-800 flex flex-col xs:flex-row items-stretch xs:items-center justify-between gap-2.5 sm:gap-3">
               <Button
                 size="sm"
                 variant="outline"
@@ -243,6 +243,7 @@ export const Courses: React.FC<CoursesProps> = ({ onNavigate, selectedCourseCode
                   else navigate(`/courses/${course.id}`);
                 }}
                 leftIcon={<BookOpen className="w-3.5 h-3.5" />}
+                className="w-full xs:w-auto justify-center"
               >
                 View Course Page
               </Button>
@@ -255,6 +256,7 @@ export const Courses: React.FC<CoursesProps> = ({ onNavigate, selectedCourseCode
                   else navigate('/contact');
                 }}
                 rightIcon={<ArrowRight className="w-3.5 h-3.5" />}
+                className="w-full xs:w-auto justify-center"
               >
                 Inquire Batch
               </Button>

@@ -108,7 +108,7 @@ export const SelectDropdown: React.FC<SelectDropdownProps> = ({
         aria-haspopup="listbox"
         aria-expanded={isOpen}
         className={cn(
-          'w-full rounded-xl px-4 py-2.5 text-sm transition-all duration-200 cursor-pointer flex items-center justify-between text-left focus:outline-none border',
+          'w-full rounded-xl px-4 py-2.5 text-base sm:text-sm transition-all duration-200 cursor-pointer flex items-center justify-between text-left focus:outline-none border',
           error
             ? 'border-red-500 hover:border-red-500 focus:border-red-500 ring-1 ring-red-500 focus:ring-2 focus:ring-red-500/40 bg-red-950/25 text-red-100 shadow-[0_0_12px_rgba(239,68,68,0.2)]'
             : isOpen

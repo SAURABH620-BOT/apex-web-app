@@ -19,9 +19,9 @@ export const Badge: React.FC<BadgeProps> = ({
   ...props
 }) => {
   const sizeStyles = {
-    sm: 'text-[11px] px-2 py-0.5 gap-1 font-medium',
-    md: 'text-xs px-2.5 py-1 gap-1.5 font-semibold',
-    lg: 'text-sm px-3.5 py-1.5 gap-2 font-bold'
+    sm: 'text-[10px] sm:text-[11px] px-2 py-0.5 gap-1 font-medium',
+    md: 'text-[11px] sm:text-xs px-2.5 py-1 gap-1.5 font-semibold',
+    lg: 'text-xs sm:text-sm px-3 sm:px-3.5 py-1 sm:py-1.5 gap-1.5 sm:gap-2 font-bold'
   }[size];
 
   const variantStyles = {
@@ -36,7 +36,7 @@ export const Badge: React.FC<BadgeProps> = ({
   return (
     <span
       className={cn(
-        'inline-flex items-center tracking-wide uppercase select-none transition-colors duration-150',
+        'inline-flex flex-wrap items-center justify-center tracking-wide uppercase select-none transition-colors duration-150 max-w-full text-center',
         isPill ? 'rounded-full' : 'rounded-lg',
         sizeStyles,
         variantStyles,
@@ -45,7 +45,7 @@ export const Badge: React.FC<BadgeProps> = ({
       {...props}
     >
       {leftIcon && <span className="inline-flex shrink-0">{leftIcon}</span>}
-      <span>{children}</span>
+      <span className="break-words">{children}</span>
     </span>
   );
 };

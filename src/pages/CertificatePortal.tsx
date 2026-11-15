@@ -422,7 +422,7 @@ export const CertificatePortal: React.FC = () => {
           <Badge variant="yellow" size="lg" leftIcon={<Lock className="w-4 h-4" />}>
             Restricted Portal Access
           </Badge>
-          <h1 className="text-xl sm:text-2xl md:text-3xl font-black font-display tracking-tight bg-gradient-to-r from-blue-400 via-sky-300 to-apex-yellow-400 bg-clip-text text-transparent whitespace-nowrap">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-black font-display tracking-tight bg-gradient-to-r from-blue-400 via-sky-300 to-apex-yellow-400 bg-clip-text text-transparent">
             Portal Authentication
           </h1>
           <Text size="sm" className="text-slate-400 max-w-md mx-auto">
@@ -430,7 +430,7 @@ export const CertificatePortal: React.FC = () => {
           </Text>
         </div>
 
-        <Card variant="glass" className="p-6 sm:p-8 space-y-6 border-slate-800 relative overflow-hidden shadow-2xl">
+        <Card variant="glass" className="p-5 sm:p-8 space-y-6 border-slate-800 relative overflow-hidden shadow-2xl">
           {/* Subtle top neon ambient bar */}
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 via-apex-yellow-400 to-amber-500" />
 

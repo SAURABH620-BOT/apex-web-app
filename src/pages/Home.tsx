@@ -258,8 +258,8 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
           KEY METRICS STRIP: 1500+ STUDENTS, 7+ YEARS EXPERIENCE
          ======================================================== */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl bg-gradient-to-r from-apex-blue-950/80 via-slate-900 to-apex-blue-950/80 border border-apex-blue-500/30 p-8 sm:p-10 shadow-2xl relative overflow-hidden">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 divide-y lg:divide-y-0 lg:divide-x divide-slate-800 text-center">
+        <div className="rounded-2xl sm:rounded-3xl bg-gradient-to-r from-apex-blue-950/80 via-slate-900 to-apex-blue-950/80 border border-apex-blue-500/30 p-5 sm:p-10 shadow-2xl relative overflow-hidden">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 divide-y lg:divide-y-0 lg:divide-x divide-slate-800 text-center">
             <div className="flex flex-col items-center justify-center p-2">
               <span className="text-3xl sm:text-4xl font-extrabold text-apex-yellow-400 font-display">
                 1500+

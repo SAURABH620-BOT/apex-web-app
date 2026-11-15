@@ -128,7 +128,7 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({ courseCode: propCour
       </div>
 
       {/* Hero Section of Course */}
-      <div className="relative rounded-3xl bg-gradient-to-tr from-apex-blue-950/90 via-slate-900 to-slate-900 border border-apex-blue-500/40 p-8 sm:p-12 overflow-hidden shadow-2xl">
+      <div className="relative rounded-2xl sm:rounded-3xl bg-gradient-to-tr from-apex-blue-950/90 via-slate-900 to-slate-900 border border-apex-blue-500/40 p-5 sm:p-12 overflow-hidden shadow-2xl">
         <div className="relative z-10 max-w-3xl space-y-6">
           <div className="flex flex-wrap items-center gap-2.5">
             <span className="font-mono text-sm font-bold px-3 py-1 rounded-xl bg-apex-blue-900 text-apex-blue-300 border border-apex-blue-500/40">
@@ -193,12 +193,13 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({ courseCode: propCour
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap items-center gap-4 pt-4">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-4">
             <Button
               size="lg"
               variant="yellow"
               onClick={() => navigate('/contact')}
               rightIcon={<ArrowRight className="w-4 h-4" />}
+              className="w-full sm:w-auto"
             >
               Enroll in {course.code} Batch
             </Button>
@@ -211,6 +212,7 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({ courseCode: propCour
                 el?.scrollIntoView({ behavior: 'smooth' });
               }}
               leftIcon={<BookOpen className="w-4 h-4" />}
+              className="w-full sm:w-auto"
             >
               Explore Full Syllabus
             </Button>

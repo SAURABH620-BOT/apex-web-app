@@ -101,7 +101,7 @@ export const About: React.FC<AboutProps> = ({ selectedSubSection }) => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
         {/* Left 2 Cols: Main Document Content */}
         <div className="lg:col-span-2 space-y-6">
-          <Card variant="glass" className="space-y-6 p-8">
+          <Card variant="glass" className="space-y-6 p-5 sm:p-8">
             <div className="space-y-2 border-b border-slate-800 pb-6">
               <div className="flex items-center gap-3">
                 <Badge variant="yellow" size="md">
