@@ -376,9 +376,9 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({ courseCode: propCour
         </div>
 
         {/* Right Column (4 cols): Enrollment Sidebar */}
-        <div className="lg:col-span-4 space-y-6">
+        <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-28">
           {/* Direct Enrollment Card */}
-          <Card variant="glass" className="p-6 sm:p-7 space-y-6 border border-slate-800 sticky top-28">
+          <Card variant="glass" className="p-6 sm:p-7 space-y-6 border border-slate-800">
             <div className="space-y-2 border-b border-slate-800 pb-4">
               <span className="text-xs uppercase font-extrabold tracking-wider text-apex-yellow-400">
                 Admissions Open
@@ -426,11 +426,11 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({ courseCode: propCour
 
             <div className="text-center">
               <a
-                href="tel:+919876543210"
+                href={`tel:${(import.meta.env.VITE_SUPPORT_PHONE || '+91 6200043032').replace(/\s+/g, '')}`}
                 className="inline-flex items-center gap-1.5 text-xs text-apex-blue-300 hover:text-white transition-colors"
               >
                 <PhoneCall className="w-3.5 h-3.5" />
-                <span>Need guidance? Call +91 98765 43210</span>
+                <span>Need guidance? Call {import.meta.env.VITE_SUPPORT_PHONE || '+91 6200043032'}</span>
               </a>
             </div>
           </Card>

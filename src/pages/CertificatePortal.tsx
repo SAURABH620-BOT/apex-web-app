@@ -419,14 +419,14 @@ export const CertificatePortal: React.FC = () => {
     return (
       <div className="pt-28 pb-24 px-4 sm:px-6 lg:px-8 max-w-lg mx-auto space-y-8 animate-fadeIn">
         <div className="text-center space-y-3">
-          <Badge variant="yellow" size="lg" leftIcon={<Lock className="w-4 h-4" />}>
-            Restricted Portal Access
+          <Badge variant="yellow" size="md" leftIcon={<Award className="w-4 h-4" />}>
+            Official Student Portal
           </Badge>
-          <h1 className="text-xl sm:text-2xl md:text-3xl font-black font-display tracking-tight bg-gradient-to-r from-blue-400 via-sky-300 to-apex-yellow-400 bg-clip-text text-transparent">
-            Portal Authentication
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-black font-display tracking-tight bg-gradient-to-r from-blue-400 via-sky-300 to-apex-yellow-400 bg-clip-text text-transparent uppercase">
+            Student Certificate Portal
           </h1>
           <Text size="sm" className="text-slate-400 max-w-md mx-auto">
-            Access to student certificate applications & dispatch records is restricted to authorized institute personnel.
+            Apex Institute student certificate verification, roll number lookup & application dispatch services.
           </Text>
         </div>
 
