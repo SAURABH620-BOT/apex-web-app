@@ -64,6 +64,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
     setIsAboutOpen(false);
     setIsCoursesOpen(false);
     setIsMobileMenuOpen(false);
+    setIsMobileCoursesOpen(false);
   }, [location.pathname]);
 
   // Mutually exclusive dropdown handlers
@@ -198,8 +199,10 @@ export const Navbar: React.FC<NavbarProps> = () => {
           >
             <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-slate-900 border border-slate-700/80 p-0.5 flex items-center justify-center overflow-hidden shadow-lg shadow-apex-blue-900/50 group-hover:scale-105 group-hover:border-apex-yellow-400/50 transition-all">
               <img
-                src="/logo/apex_logo.jpeg"
+                src="/logo/apex_logo.webp"
                 alt="Apex Institute of Computer"
+                width="44"
+                height="44"
                 className="w-full h-full object-cover rounded-lg"
               />
             </div>
@@ -448,13 +451,14 @@ export const Navbar: React.FC<NavbarProps> = () => {
           </div>
 
           {/* Mobile Hamburger Toggle Button */}
-          <div className="flex items-center gap-2 lg:hidden">
+          <div className="flex items-center gap-1.5 sm:gap-2 lg:hidden">
             <Link
               to="/portal"
-              className="text-xs font-semibold px-2.5 py-1.5 rounded-lg bg-apex-yellow-400 text-slate-950 font-display flex items-center gap-1 sm:hidden"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-xs font-semibold px-2 sm:px-2.5 py-1.5 rounded-lg bg-apex-yellow-400 text-slate-950 font-display flex items-center gap-1 sm:hidden shrink-0"
             >
-              <Award className="w-3 h-3" />
-              <span>Certificate</span>
+              <Award className="w-3.5 h-3.5" />
+              <span className="hidden xs:inline text-[11px]">Certificate</span>
             </Link>
 
             <button
@@ -475,6 +479,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
           <div className="space-y-2">
             <Link
               to="/"
+              onClick={() => setIsMobileMenuOpen(false)}
               className="w-full text-left px-4 py-2.5 rounded-xl font-semibold text-slate-200 hover:bg-slate-800 block"
             >
               Home
@@ -484,7 +489,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
             <div className="rounded-xl bg-slate-900/60 border border-slate-800/80 p-2">
               <button
                 onClick={() => setIsMobileCoursesOpen((prev) => !prev)}
-                className="w-full text-left px-2 py-2 font-semibold text-slate-200 hover:text-apex-yellow-400 flex items-center justify-between"
+                className="w-full text-left px-2 py-2 font-semibold text-slate-200 hover:text-apex-yellow-400 flex items-center justify-between cursor-pointer"
               >
                 <span>Courses & Diplomas</span>
                 <ChevronDown className={`w-4 h-4 transition-transform ${isMobileCoursesOpen ? 'rotate-180' : ''}`} />
@@ -496,6 +501,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                     <Link
                       key={c.code}
                       to={`/courses/${c.slug}`}
+                      onClick={() => setIsMobileMenuOpen(false)}
                       className="w-full text-left px-3 py-2 rounded-lg text-xs font-bold text-slate-300 hover:text-apex-yellow-400 hover:bg-slate-800 flex items-center justify-between block"
                     >
                       <span>{c.code} - {c.name}</span>
@@ -504,6 +510,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                   ))}
                   <Link
                     to="/courses"
+                    onClick={() => setIsMobileMenuOpen(false)}
                     className="w-full text-center text-xs text-apex-blue-400 font-semibold py-2 block"
                   >
                     View All Courses Catalog &rarr;
@@ -514,6 +521,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
 
             <Link
               to="/why-apex"
+              onClick={() => setIsMobileMenuOpen(false)}
               className="w-full text-left px-4 py-2.5 rounded-xl font-semibold text-slate-200 hover:bg-slate-800 block"
             >
               Why Apex
@@ -521,6 +529,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
 
             <Link
               to="/faculty"
+              onClick={() => setIsMobileMenuOpen(false)}
               className="w-full text-left px-4 py-2.5 rounded-xl font-semibold text-slate-200 hover:bg-slate-800 block"
             >
               Faculty (Durgesh Sir, Nitish Kumar, Ashutosh Kumar)
@@ -528,6 +537,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
 
             <Link
               to="/lab-tour"
+              onClick={() => setIsMobileMenuOpen(false)}
               className="w-full text-left px-4 py-2.5 rounded-xl font-semibold text-slate-200 hover:bg-slate-800 block"
             >
               Lab Tour (High-Tech Computer Labs)
@@ -543,6 +553,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                   <Link
                     key={item.id}
                     to={`/about/${item.id}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
                     className="w-full text-left px-4 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-slate-800/60 flex items-center justify-between block"
                   >
                     <span>{item.title}</span>
@@ -554,6 +565,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
 
             <Link
               to="/contact"
+              onClick={() => setIsMobileMenuOpen(false)}
               className="w-full text-left px-4 py-2.5 rounded-xl font-semibold text-slate-200 hover:bg-slate-800 border-t border-slate-800/80 block"
             >
               Contact Us & Inquiry Form
@@ -564,7 +576,10 @@ export const Navbar: React.FC<NavbarProps> = () => {
                 variant="yellow"
                 fullWidth
                 size="md"
-                onClick={() => navigate('/portal')}
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  navigate('/portal');
+                }}
                 leftIcon={<Award className="w-4 h-4" />}
               >
                 Request for Certificate

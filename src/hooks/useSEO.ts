@@ -93,6 +93,14 @@ export function useSEO({
       if (schemaTag) {
         schemaTag.remove();
       }
+      // Revert robots meta tag to allow indexing if component specified noindex
+      if (noindex) {
+        const robotsTag = document.querySelector('meta[name="robots"]');
+        if (robotsTag) {
+          robotsTag.setAttribute('content', 'index, follow');
+        }
+      }
     };
   }, [title, description, keywords, canonicalPath, ogImage, ogType, schema, noindex]);
 }
+

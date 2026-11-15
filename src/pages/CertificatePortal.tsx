@@ -419,18 +419,18 @@ export const CertificatePortal: React.FC = () => {
     return (
       <div className="pt-28 pb-24 px-4 sm:px-6 lg:px-8 max-w-lg mx-auto space-y-8 animate-fadeIn">
         <div className="text-center space-y-3">
-          <Badge variant="yellow" size="lg" leftIcon={<Lock className="w-4 h-4" />}>
-            Restricted Portal Access
+          <Badge variant="yellow" size="md" leftIcon={<Award className="w-4 h-4" />}>
+            Official Student Portal
           </Badge>
-          <h1 className="text-xl sm:text-2xl md:text-3xl font-black font-display tracking-tight bg-gradient-to-r from-blue-400 via-sky-300 to-apex-yellow-400 bg-clip-text text-transparent whitespace-nowrap">
-            Portal Authentication
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-black font-display tracking-tight bg-gradient-to-r from-blue-400 via-sky-300 to-apex-yellow-400 bg-clip-text text-transparent uppercase">
+            Student Certificate Portal
           </h1>
           <Text size="sm" className="text-slate-400 max-w-md mx-auto">
-            Access to student certificate applications & dispatch records is restricted to authorized institute personnel.
+            Apex Institute student certificate verification, roll number lookup & application dispatch services.
           </Text>
         </div>
 
-        <Card variant="glass" className="p-6 sm:p-8 space-y-6 border-slate-800 relative overflow-hidden shadow-2xl">
+        <Card variant="glass" className="p-5 sm:p-8 space-y-6 border-slate-800 relative overflow-hidden shadow-2xl">
           {/* Subtle top neon ambient bar */}
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 via-apex-yellow-400 to-amber-500" />
 
@@ -490,8 +490,8 @@ export const CertificatePortal: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  tabIndex={-1}
-                  className="absolute right-3.5 flex items-center text-slate-400 hover:text-slate-200 transition-colors"
+                  aria-label={showPassword ? 'Hide password' : 'Show password'}
+                  className="absolute right-3.5 flex items-center text-slate-400 hover:text-slate-200 transition-colors p-1"
                 >
                   {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                 </button>

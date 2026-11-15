@@ -16,13 +16,13 @@ export const Heading: React.FC<HeadingProps> = ({
   children,
   ...props
 }) => {
-  const baseStyles = 'font-display font-bold tracking-tight';
+  const baseStyles = 'font-display font-bold tracking-tight break-words';
 
   const sizeStyles = {
-    1: 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight',
-    2: 'text-2xl sm:text-3xl md:text-4xl font-bold leading-snug',
-    3: 'text-xl sm:text-2xl md:text-3xl font-semibold leading-normal',
-    4: 'text-lg sm:text-xl font-semibold'
+    1: 'text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight',
+    2: 'text-xl sm:text-3xl md:text-4xl font-bold leading-snug',
+    3: 'text-lg sm:text-2xl md:text-3xl font-semibold leading-normal',
+    4: 'text-base sm:text-xl font-semibold'
   }[level];
 
   const gradientStyles = {

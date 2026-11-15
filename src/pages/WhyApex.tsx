@@ -171,35 +171,35 @@ export const WhyApex: React.FC<WhyApexProps> = ({ onNavigate }) => {
   ];
 
   return (
-    <div className="pt-28 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-20 animate-fadeIn">
+    <div className="pt-28 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-14 sm:space-y-20 animate-fadeIn overflow-hidden">
       {/* Hero Header */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
-        <Badge variant="yellow" size="lg" leftIcon={<Sparkles className="w-4 h-4" />}>
+        <Badge variant="yellow" size="md" leftIcon={<Sparkles className="w-3.5 h-3.5" />} className="max-w-full text-center">
           The Apex Learning Standard • Since 2018
         </Badge>
         <Heading level={1} gradient="blue-yellow">
           Kyun Apex Hai Sabse Alag Aur Bharosemand?
         </Heading>
-        <Text size="lg" className="text-slate-300 leading-relaxed">
+        <Text size="lg" className="text-slate-300 leading-relaxed max-w-2xl mx-auto">
           Computer sikhna sirf certificate lene ka naam nahi hai—ye aapke career ki pehli seedhi hai. Apex Institute me hum notes ratane par nahi, har student ke haath me mouse pakda kar unhe job-ready computer professional banane par vishwas rakhte hain.
         </Text>
       </div>
 
       {/* Social Proof Stats Counter Strip */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
         {keyMetrics.map((metric, idx) => (
           <Card
             key={idx}
             variant="glass"
-            className="p-5 sm:p-6 text-center space-y-1.5 border border-slate-800/80 bg-gradient-to-b from-slate-900/90 to-slate-950/90 hover:border-slate-700 transition-all shadow-lg"
+            className="p-3.5 sm:p-6 text-center space-y-1 sm:space-y-1.5 border border-slate-800/80 bg-gradient-to-b from-slate-900/90 to-slate-950/90 hover:border-slate-700 transition-all shadow-lg"
           >
-            <div className="text-2xl sm:text-3xl lg:text-4xl font-black font-display text-apex-yellow-400">
+            <div className="text-xl sm:text-3xl lg:text-4xl font-black font-display text-apex-yellow-400">
               {metric.value}
             </div>
             <div className="text-xs sm:text-sm font-bold text-white font-display">
               {metric.label}
             </div>
-            <p className="text-[11px] sm:text-xs text-slate-400 leading-tight">
+            <p className="text-[10px] sm:text-xs text-slate-400 leading-tight">
               {metric.subtext}
             </p>
           </Card>
@@ -301,8 +301,12 @@ export const WhyApex: React.FC<WhyApexProps> = ({ onNavigate }) => {
           </p>
         </div>
 
-        <div className="overflow-x-auto rounded-3xl border border-slate-800 bg-slate-900/60 shadow-2xl">
-          <table className="w-full text-left border-collapse text-xs sm:text-sm">
+        <div className="flex sm:hidden items-center justify-end text-[11px] text-slate-400 gap-1.5 px-1">
+          <span>↔ Scroll horizontally to view table</span>
+        </div>
+
+        <div className="overflow-x-auto rounded-2xl sm:rounded-3xl border border-slate-800 bg-slate-900/60 shadow-2xl">
+          <table className="w-full min-w-[560px] text-left border-collapse text-xs sm:text-sm">
             <thead>
               <tr className="border-b border-slate-800 bg-slate-950/90">
                 <th className="py-4 px-5 sm:px-6 text-xs font-bold uppercase tracking-wider text-slate-400">
@@ -342,16 +346,18 @@ export const WhyApex: React.FC<WhyApexProps> = ({ onNavigate }) => {
       </div>
 
       {/* Founder / Mentor's Pledge Box */}
-      <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-tr from-slate-900 via-slate-900 to-slate-950 border border-slate-800 shadow-2xl relative overflow-hidden">
+      <div className="p-5 sm:p-10 rounded-2xl sm:rounded-3xl bg-gradient-to-tr from-slate-900 via-slate-900 to-slate-950 border border-slate-800 shadow-2xl relative overflow-hidden">
         <div className="absolute top-0 right-0 w-80 h-80 bg-apex-yellow-400/5 rounded-full blur-3xl pointer-events-none" />
 
         <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8 relative z-10">
           <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-tr from-apex-blue-600 to-apex-yellow-400 p-1 shrink-0 shadow-xl shadow-apex-yellow-400/10 overflow-hidden">
-            <div className="w-full h-full bg-slate-950 rounded-xl flex items-center justify-center overflow-hidden">
+            <div className="w-full h-full bg-slate-950 rounded-xl flex items-center justify-center overflow-hidden p-1.5">
               <img
-                src="/logo/apex_logo.jpeg"
+                src="/logo/apex_logo.webp"
                 alt="Apex Institute Logo"
-                className="w-full h-full object-cover"
+                width="96"
+                height="96"
+                className="w-full h-full object-contain"
               />
             </div>
           </div>
@@ -375,7 +381,7 @@ export const WhyApex: React.FC<WhyApexProps> = ({ onNavigate }) => {
       </div>
 
       {/* High-Converting Final Call to Action */}
-      <div className="rounded-3xl bg-gradient-to-r from-apex-blue-950 via-slate-900 to-slate-900 border border-apex-blue-500/40 p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl relative overflow-hidden">
+      <div className="rounded-2xl sm:rounded-3xl bg-gradient-to-r from-apex-blue-950 via-slate-900 to-slate-900 border border-apex-blue-500/40 p-6 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl relative overflow-hidden">
         <div className="space-y-2 text-center md:text-left">
           <Badge variant="green" size="sm">
             Free Demo Class Available

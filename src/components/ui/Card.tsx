@@ -1,8 +1,7 @@
 import React from 'react';
-import { motion, type HTMLMotionProps } from 'framer-motion';
 import { cn } from '../../helpers/cn';
 
-export interface CardProps extends HTMLMotionProps<'div'> {
+export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: 'glass' | 'solid' | 'interactive' | 'glow-blue' | 'glow-yellow' | 'glow-red';
   padded?: boolean;
   children: React.ReactNode;
@@ -31,11 +30,11 @@ export const Card: React.FC<CardProps> = ({
   }[variant];
 
   return (
-    <motion.div
+    <div
       className={cn(baseStyles, variantStyles, padded ? 'p-6 sm:p-7' : '', className)}
       {...props}
     >
       {children}
-    </motion.div>
+    </div>
   );
 };

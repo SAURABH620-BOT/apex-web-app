@@ -59,6 +59,49 @@
   box-shadow: 0 12px 30px -10px rgba(37, 99, 235, 0.3);
 }
 
+/* Content-visibility optimization for below-the-fold sections */
+.content-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 600px;
+}
+
+/* Hardware-accelerated CSS animations for carousel and route changes */
+@keyframes fadeInRoute {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes carouselFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes carouselSlide {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes modalScaleIn {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeInRoute 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-carousel-fade {
+  animation: carouselFade 0.6s ease-in-out forwards;
+}
+
+.animate-carousel-slide {
+  animation: carouselSlide 0.4s ease-out forwards;
+}
+
+.animate-modal-in {
+  animation: modalScaleIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 /* Print styles for Certificate Generation */
 @media print {
   body {

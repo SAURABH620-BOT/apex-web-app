@@ -173,9 +173,9 @@ export const Courses: React.FC<CoursesProps> = ({ onNavigate, selectedCourseCode
           >
             <div>
               {/* Badges and Duration */}
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-2">
-                  <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-apex-blue-900 text-apex-blue-300 border border-apex-blue-500/30">
+              <div className="flex items-start justify-between gap-2 mb-4">
+                <div className="flex items-center gap-1.5 flex-wrap min-w-0">
+                  <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-apex-blue-900 text-apex-blue-300 border border-apex-blue-500/30 whitespace-nowrap shrink-0 leading-none">
                     {course.code}
                   </span>
                   {course.isNew && (
@@ -190,8 +190,8 @@ export const Courses: React.FC<CoursesProps> = ({ onNavigate, selectedCourseCode
                   )}
                 </div>
 
-                <div className="flex items-center gap-1 text-xs text-slate-400 font-mono">
-                  <Clock className="w-3.5 h-3.5 text-apex-yellow-400" />
+                <div className="flex items-center gap-1 text-xs text-slate-400 font-mono whitespace-nowrap shrink-0 pt-0.5">
+                  <Clock className="w-3.5 h-3.5 text-apex-yellow-400 shrink-0" />
                   <span>{course.duration}</span>
                 </div>
               </div>
@@ -234,7 +234,7 @@ export const Courses: React.FC<CoursesProps> = ({ onNavigate, selectedCourseCode
             </div>
 
             {/* Bottom Actions */}
-            <div className="pt-4 border-t border-slate-800 flex items-center justify-between gap-3">
+            <div className="pt-4 border-t border-slate-800 flex flex-col xs:flex-row items-stretch xs:items-center justify-between gap-2.5 sm:gap-3">
               <Button
                 size="sm"
                 variant="outline"
@@ -243,6 +243,7 @@ export const Courses: React.FC<CoursesProps> = ({ onNavigate, selectedCourseCode
                   else navigate(`/courses/${course.id}`);
                 }}
                 leftIcon={<BookOpen className="w-3.5 h-3.5" />}
+                className="w-full xs:w-auto justify-center"
               >
                 View Course Page
               </Button>
@@ -255,6 +256,7 @@ export const Courses: React.FC<CoursesProps> = ({ onNavigate, selectedCourseCode
                   else navigate('/contact');
                 }}
                 rightIcon={<ArrowRight className="w-3.5 h-3.5" />}
+                className="w-full xs:w-auto justify-center"
               >
                 Inquire Batch
               </Button>

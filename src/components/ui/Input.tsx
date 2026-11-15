@@ -35,7 +35,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             id={inputId}
             ref={ref}
             className={cn(
-              'w-full rounded-xl px-4 py-2.5 text-sm transition-all duration-200 focus:outline-none border',
+              'w-full rounded-xl px-4 py-2.5 text-base sm:text-sm transition-all duration-200 focus:outline-none border',
               leftIcon ? 'pl-10' : '',
               rightIcon ? 'pr-10' : '',
               error

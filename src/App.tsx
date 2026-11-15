@@ -1,14 +1,14 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { ScrollToTop } from './components/layout/ScrollToTop';
 import { HeroSkeleton } from './components/skeletons/HeroSkeleton';
 import { useAuth } from './hooks/useAuth';
 
-// Route-level code splitting with React.lazy
-const Home = React.lazy(() => import('./pages/Home').then((m) => ({ default: m.Home })));
+import { Home } from './pages/Home';
+
+// Route-level code splitting with React.lazy for secondary routes
 const Courses = React.lazy(() => import('./pages/Courses').then((m) => ({ default: m.Courses })));
 const CourseDetail = React.lazy(() => import('./pages/CourseDetail').then((m) => ({ default: m.CourseDetail })));
 const WhyApex = React.lazy(() => import('./pages/WhyApex').then((m) => ({ default: m.WhyApex })));
@@ -23,32 +23,23 @@ function AnimatedRoutes() {
   const location = useLocation();
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={location.pathname}
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -10 }}
-        transition={{ duration: 0.22, ease: 'easeOut' }}
-        className="flex-1 flex flex-col"
-      >
-        <Suspense fallback={<div className="pt-24 px-4 max-w-7xl mx-auto w-full"><HeroSkeleton /></div>}>
-          <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Home />} />
-            <Route path="/courses" element={<Courses />} />
-            <Route path="/courses/:courseCode" element={<CourseDetail />} />
-            <Route path="/why-apex" element={<WhyApex />} />
-            <Route path="/faculty" element={<Faculty />} />
-            <Route path="/lab-tour" element={<LabTour />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/about/:section" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/portal" element={<CertificatePortal />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
-      </motion.div>
-    </AnimatePresence>
+    <div key={location.pathname} className="flex-1 flex flex-col animate-fade-in">
+      <Suspense fallback={<div className="pt-24 px-4 max-w-7xl mx-auto w-full"><HeroSkeleton /></div>}>
+        <Routes location={location}>
+          <Route path="/" element={<Home />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/courses/:courseCode" element={<CourseDetail />} />
+          <Route path="/why-apex" element={<WhyApex />} />
+          <Route path="/faculty" element={<Faculty />} />
+          <Route path="/lab-tour" element={<LabTour />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/about/:section" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/portal" element={<CertificatePortal />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
+    </div>
   );
 }
 

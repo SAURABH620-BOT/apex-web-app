@@ -166,7 +166,7 @@ export const Contact: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Left Form: Integrated Student Inquiry Form */}
         <div className="lg:col-span-7">
-          <Card variant="glass" className="p-6 sm:p-8 space-y-6">
+          <Card variant="glass" className="p-5 sm:p-8 space-y-6">
             <div>
               <div className="flex items-center gap-2 mb-1">
                 <Sparkles className="w-4 h-4 text-apex-yellow-400" />
@@ -305,7 +305,7 @@ export const Contact: React.FC = () => {
 
         {/* Right Info: Address, Hours & Map Embed Placeholder */}
         <div className="lg:col-span-5 space-y-6">
-          <Card variant="glass" className="space-y-5 p-6">
+          <Card variant="glass" className="space-y-5 p-5 sm:p-6">
             <h3 className="text-lg font-bold font-display text-white border-b border-slate-800 pb-3">
               Campus Headquarters
             </h3>

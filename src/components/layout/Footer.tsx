@@ -23,10 +23,10 @@ export const Footer: React.FC<FooterProps> = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-slate-950 text-slate-300 border-t border-slate-800/80 overflow-hidden pt-16 pb-12">
+    <footer className="relative bg-slate-950 text-slate-300 border-t border-slate-800/80 overflow-hidden pt-12 sm:pt-16 pb-8 sm:pb-12">
       {/* Decorative gradient background blur */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-apex-blue-600/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 sm:w-96 h-64 sm:h-96 bg-apex-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-64 sm:w-96 h-64 sm:h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-slate-800/80">
@@ -35,9 +35,11 @@ export const Footer: React.FC<FooterProps> = () => {
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-700/80 p-0.5 flex items-center justify-center overflow-hidden shadow-lg shadow-apex-blue-900/40">
                 <img
-                  src="/logo/apex_logo.jpeg"
+                  src="/logo/apex_logo.webp"
                   alt="Apex Institute of Computer"
-                  className="w-full h-full object-cover rounded-lg"
+                  width="48"
+                  height="48"
+                  className="w-full h-full object-contain rounded-lg p-0.5"
                 />
               </div>
               <div>
@@ -69,9 +71,9 @@ export const Footer: React.FC<FooterProps> = () => {
 
           {/* Column 2: Courses */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-white font-display">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-white font-display">
               Programs Offered
-            </h4>
+            </h3>
             <ul className="space-y-2 text-sm">
               {[
                 { code: 'ADCA', slug: 'adca', label: 'ADCA (12 Months)' },
@@ -100,9 +102,9 @@ export const Footer: React.FC<FooterProps> = () => {
 
           {/* Column 3: About & Statutory Affiliations */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-white font-display">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-white font-display">
               Affiliations & Legal
-            </h4>
+            </h3>
             <ul className="space-y-2 text-sm">
               {[
                 { id: 'about-ica', label: 'About ICA Network' },
@@ -130,9 +132,9 @@ export const Footer: React.FC<FooterProps> = () => {
 
           {/* Column 4: Contact & Lab Hours */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-white font-display">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-white font-display">
               Campus & Support
-            </h4>
+            </h3>
             <div className="space-y-3 text-xs sm:text-sm text-slate-400">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-apex-red-400 shrink-0 mt-0.5" />

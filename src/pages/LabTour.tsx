@@ -52,29 +52,29 @@ export const LabTour: React.FC<LabTourProps> = ({ onNavigate }) => {
       </div>
 
       {/* Lab Highlights Badges Strip */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 text-center space-y-1">
-          <Cpu className="w-6 h-6 text-apex-blue-400 mx-auto" />
-          <h4 className="text-sm font-bold text-white">Intel Core Powered</h4>
-          <p className="text-xs text-slate-400">High speed 16GB RAM rigs</p>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-4">
+        <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-900/80 border border-slate-800 text-center space-y-1">
+          <Cpu className="w-5 sm:w-6 h-5 sm:h-6 text-apex-blue-400 mx-auto" />
+          <h4 className="text-xs sm:text-sm font-bold text-white">Intel Core Powered</h4>
+          <p className="text-[10px] sm:text-xs text-slate-400">High speed 16GB RAM rigs</p>
         </div>
 
-        <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 text-center space-y-1">
-          <Monitor className="w-6 h-6 text-apex-yellow-400 mx-auto" />
-          <h4 className="text-sm font-bold text-white">1:1 Dedicated PC</h4>
-          <p className="text-xs text-slate-400">Zero screen sharing</p>
+        <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-900/80 border border-slate-800 text-center space-y-1">
+          <Monitor className="w-5 sm:w-6 h-5 sm:h-6 text-apex-yellow-400 mx-auto" />
+          <h4 className="text-xs sm:text-sm font-bold text-white">1:1 Dedicated PC</h4>
+          <p className="text-[10px] sm:text-xs text-slate-400">Zero screen sharing</p>
         </div>
 
-        <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 text-center space-y-1">
-          <Zap className="w-6 h-6 text-emerald-400 mx-auto" />
-          <h4 className="text-sm font-bold text-white">10kVA Online UPS</h4>
-          <p className="text-xs text-slate-400">100% power uninterrupted</p>
+        <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-900/80 border border-slate-800 text-center space-y-1">
+          <Zap className="w-5 sm:w-6 h-5 sm:h-6 text-emerald-400 mx-auto" />
+          <h4 className="text-xs sm:text-sm font-bold text-white">10kVA Online UPS</h4>
+          <p className="text-[10px] sm:text-xs text-slate-400">100% power uninterrupted</p>
         </div>
 
-        <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 text-center space-y-1">
-          <Wifi className="w-6 h-6 text-cyan-400 mx-auto" />
-          <h4 className="text-sm font-bold text-white">Gigabit Fiber LAN</h4>
-          <p className="text-xs text-slate-400">Instant portal access</p>
+        <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-900/80 border border-slate-800 text-center space-y-1">
+          <Wifi className="w-5 sm:w-6 h-5 sm:h-6 text-cyan-400 mx-auto" />
+          <h4 className="text-xs sm:text-sm font-bold text-white">Gigabit Fiber LAN</h4>
+          <p className="text-[10px] sm:text-xs text-slate-400">Instant portal access</p>
         </div>
       </div>
 
@@ -105,7 +105,7 @@ export const LabTour: React.FC<LabTourProps> = ({ onNavigate }) => {
           >
             <div>
               {/* Image Banner with overlay */}
-              <div className="relative h-64 sm:h-72 overflow-hidden bg-slate-900">
+              <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] md:h-72 overflow-hidden bg-slate-950">
                 <img
                   src={lab.imageUrl}
                   alt={lab.title}
@@ -157,7 +157,7 @@ export const LabTour: React.FC<LabTourProps> = ({ onNavigate }) => {
             </div>
 
             {/* Bottom bar */}
-            <div className="p-6 pt-0 flex items-center justify-between">
+            <div className="p-5 sm:p-6 pt-0 flex flex-col xs:flex-row items-stretch xs:items-center justify-between gap-3">
               <span className="text-xs text-slate-400">Visit in Person &bull; Open Mon-Sat</span>
               <Button
                 size="sm"
@@ -167,6 +167,7 @@ export const LabTour: React.FC<LabTourProps> = ({ onNavigate }) => {
                   else navigate('/contact');
                 }}
                 rightIcon={<ArrowRight className="w-3.5 h-3.5" />}
+                className="w-full xs:w-auto justify-center"
               >
                 Book Lab Visit
               </Button>
@@ -185,11 +186,11 @@ export const LabTour: React.FC<LabTourProps> = ({ onNavigate }) => {
           size="lg"
         >
           <div className="space-y-4 text-slate-300">
-            <div className="rounded-2xl overflow-hidden h-72 sm:h-96 w-full bg-slate-900">
+            <div className="rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-[16/9] max-h-[65vh] w-full bg-slate-950 flex items-center justify-center border border-slate-800">
               <img
                 src={activeLabModal.imageUrl}
                 alt={activeLabModal.title}
-                className={`w-full h-full object-cover ${activeLabModal.imagePosition || 'object-center'}`}
+                className="w-full h-full object-contain"
               />
             </div>
 
