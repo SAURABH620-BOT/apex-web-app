@@ -37,7 +37,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  // Auto carousel timer (30 seconds per slide)
+  // Auto carousel timer (15 seconds per slide)
   const nextSlide = useCallback(() => {
     setCurrentSlideIndex((prev) => (prev + 1) % heroSlidesData.length);
   }, []);
@@ -50,7 +50,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
     if (isPaused) return;
     const interval = setInterval(() => {
       nextSlide();
-    }, 30000);
+    }, 15000);
     return () => clearInterval(interval);
   }, [isPaused, nextSlide]);
 
