@@ -288,7 +288,7 @@ export const WhyApex: React.FC<WhyApexProps> = ({ onNavigate }) => {
       </div>
 
       {/* Section: Direct Comparison Table */}
-      <div className="space-y-8">
+      <div className="space-y-8 w-full max-w-full min-w-0">
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <Badge variant="blue" size="md" leftIcon={<BadgeCheck className="w-3.5 h-3.5" />}>
             Transparent Comparison
@@ -305,7 +305,7 @@ export const WhyApex: React.FC<WhyApexProps> = ({ onNavigate }) => {
           <span>↔ Scroll horizontally to view table</span>
         </div>
 
-        <div className="overflow-x-auto rounded-2xl sm:rounded-3xl border border-slate-800 bg-slate-900/60 shadow-2xl">
+        <div className="w-full max-w-[calc(100vw-2rem)] sm:max-w-full overflow-x-auto rounded-2xl sm:rounded-3xl border border-slate-800 bg-slate-900/60 shadow-2xl">
           <table className="w-full min-w-[560px] text-left border-collapse text-xs sm:text-sm">
             <thead>
               <tr className="border-b border-slate-800 bg-slate-950/90">
